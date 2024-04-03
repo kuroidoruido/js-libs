@@ -1,0 +1,21 @@
+{
+  "name": "@anthonypena/tsconfig",
+  "version": "0.1.0",
+  "description": "Personal typescript configuration",
+  "private": false,
+  "files": [
+    "*.json"
+  ],
+  "scripts": {
+    "pretty": "prettier . --check",
+    "pretty-fix": "prettier . --write"
+  },
+  "keywords": [],
+  "author": "Anthony Pena",
+  "license": "MIT",
+  "devDependencies": {
+    "@anthonypena/prettier-config": "workspace:*",
+    "prettier": "^3.2.5"
+  },
+  "prettier": "@anthonypena/prettier-config"
+}

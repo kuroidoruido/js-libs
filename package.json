@@ -1,0 +1,25 @@
+{
+  "name": "js-libs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "run-on-libs": "pnpm -r --if-present --filter=./cli/** --filter=./libs/** run",
+    "build": "pnpm run-on-libs build",
+    "test": "pnpm run-on-libs test",
+    "pretty": "pnpm run-on-libs pretty",
+    "pretty-fix": "pnpm run-on-libs pretty-fix",
+    "lint": "pnpm run-on-libs lint",
+    "lint-fix": "pnpm run-on-libs lint-fix",
+    "publish-new-packages": "pnpm -r --filter=./cli/publish-new-packages --filter=./libs/** run play --repo=../.. --ignore=@anthonypena/create-lib,@anthonypena/create-cli,@anthonypena/publish-new-packages"
+  },
+  "keywords": [],
+  "author": "Anthony Pena",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=8.15"
+  }
+}

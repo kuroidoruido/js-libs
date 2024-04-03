@@ -1,0 +1,30 @@
+{
+  "name": "@anthonypena/types-utils",
+  "version": "0.1.0",
+  "description": "Basic lib template",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "test": "echo 0",
+    "pretty": "prettier . --check",
+    "pretty-fix": "prettier . --write",
+    "lint": "eslint --ext ts,tsx,js,tsx src",
+    "lint-fix": "pnpm lint --fix"
+  },
+  "keywords": [],
+  "author": "Anthony Pena",
+  "license": "MIT",
+  "devDependencies": {
+    "@anthonypena/eslint-plugin": "workspace:*",
+    "@anthonypena/prettier-config": "workspace:*",
+    "@anthonypena/tsconfig": "workspace:*",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.3",
+    "typescript-eslint": "^7.5.0"
+  },
+  "prettier": "@anthonypena/prettier-config"
+}

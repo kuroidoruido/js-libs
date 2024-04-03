@@ -1,0 +1,45 @@
+{
+  "name": "@anthonypena/create-cli",
+  "version": "0.1.0",
+  "description": "Basic CLI template",
+  "bin": {
+    "create-cli": "./bin/index.js"
+  },
+  "main": "./dist/api.js",
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "play": "tsx ./src/index.ts",
+    "build-lib": "tsc",
+    "build-bin": "ncc build --minify ./src/index.ts -o ./bin",
+    "build": "run-s build-lib build-bin",
+    "test": "vitest",
+    "pretty": "prettier . --check",
+    "pretty-fix": "prettier . --write",
+    "lint": "eslint --ext ts,tsx,js,tsx src",
+    "lint-fix": "pnpm lint --fix"
+  },
+  "keywords": [],
+  "author": "Anthony Pena",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.0.0",
+    "pino": "^8.20.0",
+    "pino-pretty": "^11.0.0"
+  },
+  "devDependencies": {
+    "@anthonypena/eslint-plugin": "workspace:*",
+    "@anthonypena/prettier-config": "workspace:*",
+    "@anthonypena/tsconfig": "workspace:*",
+    "@types/node": "^20.12.5",
+    "@vercel/ncc": "^0.38.1",
+    "eslint": "^8.57.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.3",
+    "typescript-eslint": "^7.5.0",
+    "vitest": "^1.4.0"
+  },
+  "prettier": "@anthonypena/prettier-config"
+}
