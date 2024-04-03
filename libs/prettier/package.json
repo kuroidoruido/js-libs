@@ -1,0 +1,11 @@
+{
+  "name": "@anthonypena/prettier-config",
+  "version": "0.1.0",
+  "description": "Personal prettier config",
+  "main": ".prettierrc.json",
+  "keywords": [
+    "Prettier"
+  ],
+  "author": "Anthony Pena",
+  "license": "MIT"
+}
