@@ -1,6 +1,8 @@
-import { noop } from '@anthonypena/fp';
+import anthonypenaFp from '@anthonypena/fp';
 import nodePath from 'node:path';
 import { simpleGit } from 'simple-git';
+
+const { noop } = anthonypenaFp;
 
 function git(rootDir: string) {
   return simpleGit({ baseDir: nodePath.resolve(process.cwd(), rootDir) });

@@ -1,6 +1,6 @@
 {
   "name": "@anthonypena/publish-new-packages",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Basic CLI template",
   "bin": {
     "publish-new-packages": "./bin/index.js"
