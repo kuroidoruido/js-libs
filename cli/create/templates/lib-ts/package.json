@@ -1,5 +1,5 @@
 {
-  "name": "@anthonypena/create-lib",
+  "name": "@anthonypena/<<template:name>>",
   "version": "0.1.0",
   "description": "Basic lib template",
   "main": "dist/index.js",

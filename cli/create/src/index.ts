@@ -15,9 +15,20 @@ function defineArgs() {
   program
     .name(packageJson.name.substring(packageJson.name.indexOf('/') + 1))
     .version(packageJson.version)
+    .description(`Create a new project from template.`)
     .option('--debug', 'Enable more logs.', false)
-    .option('--first', 'Enable something', false)
-    .option('-s, --separator <char>');
+    .option('--dry', 'Enable dry mode.', false)
+    .option(
+      '-t, --template <template name>',
+      'One of the available template',
+      '',
+    )
+    .option('-n, --name <project name>', 'The project name', '<folder name>')
+    .option(
+      '-r, --root <path to output>',
+      'Where to generate the project',
+      '.',
+    );
 
   program.parse();
 

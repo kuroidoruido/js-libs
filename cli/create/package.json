@@ -1,5 +1,5 @@
 {
-  "name": "@anthonypena/create-cli",
+  "name": "@anthonypena/create",
   "version": "0.1.0",
   "description": "Basic CLI template",
   "bin": {
@@ -10,9 +10,10 @@
   "private": false,
   "scripts": {
     "play": "tsx ./src/index.ts",
+    "clean": "rimraf ./dist",
     "build-lib": "tsc",
     "build-bin": "ncc build --minify ./src/index.ts -o ./bin",
-    "build": "run-s build-lib build-bin",
+    "build": "run-s clean build-lib build-bin",
     "test": "vitest",
     "pretty": "prettier . --check",
     "pretty-fix": "prettier . --write",
@@ -23,19 +24,24 @@
   "author": "Anthony Pena",
   "license": "MIT",
   "dependencies": {
+    "@anthonypena/fp": "workspace:*",
     "commander": "^12.0.0",
     "pino": "^8.20.0",
-    "pino-pretty": "^11.0.0"
+    "pino-pretty": "^11.0.0",
+    "shelljs": "^0.8.5",
+    "ts-pattern": "^5.1.1"
   },
   "devDependencies": {
     "@anthonypena/eslint-plugin": "workspace:*",
     "@anthonypena/prettier-config": "workspace:*",
     "@anthonypena/tsconfig": "workspace:*",
     "@types/node": "^20.12.5",
+    "@types/shelljs": "^0.8.15",
     "@vercel/ncc": "^0.38.1",
     "eslint": "^8.57.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
     "tsx": "^4.7.2",
     "typescript": "^5.4.3",
     "typescript-eslint": "^7.5.0",

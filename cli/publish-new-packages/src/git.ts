@@ -1,4 +1,4 @@
-// import { noop } from '@anthonypena/fp/dist/basic';
+import { noop } from '@anthonypena/fp';
 import nodePath from 'node:path';
 import { simpleGit } from 'simple-git';
 
@@ -11,5 +11,5 @@ export async function listTags(rootDir: string): Promise<string[]> {
 }
 
 export async function addTag(rootDir: string, tag: string): Promise<void> {
-  return (await git(rootDir)).addTag(tag).then(() => {});
+  return (await git(rootDir)).addTag(tag).then(noop);
 }
