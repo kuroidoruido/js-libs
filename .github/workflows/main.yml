@@ -1,8 +1,7 @@
-name: CI/CD
+name: Auto publish
 on:
   push:
     branches: [main]
-  pull_request:
 
 jobs:
   main:
