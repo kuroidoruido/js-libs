@@ -19,7 +19,7 @@ export function createBotSpace<T extends Record<string, unknown>>(
           const data = await bot.data(baseContext);
           const message = await bot.message({ ...baseContext, data });
           if (env.DRY === 'true') {
-            await printInConsole();
+            await printInConsole()({ ...baseContext, message });
           } else {
             await bot.emitter({ ...baseContext, message });
           }
