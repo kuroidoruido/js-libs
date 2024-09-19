@@ -1,5 +1,5 @@
 import { BaseContext, Bot } from './bot';
-import { printInConsole } from './emitters/printInConsole';
+import { printInConsole } from './emitters/print-in-console';
 
 export interface SpaceConfig {
   env: Record<string, string>;

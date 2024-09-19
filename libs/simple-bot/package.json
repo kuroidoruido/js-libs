@@ -1,6 +1,6 @@
 {
   "name": "@anthonypena/simple-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple bot framework.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,5 +30,24 @@
     "typescript": "^5.4.3",
     "vitest": "^1.4.0"
   },
-  "prettier": "@anthonypena/prettier-config"
+  "prettier": "@anthonypena/prettier-config",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./emitters": {
+      "types": "./dist/emitters/index.d.ts",
+      "default": "./dist/emitters/index.js"
+    },
+    "./fetchers": {
+      "types": "./dist/fetchers/index.d.ts",
+      "default": "./dist/fetchers/index.js"
+    },
+    "./triggers": {
+      "types": "./dist/triggers.d.ts",
+      "default": "./dist/triggers.js"
+    },
+    "./package.json": "./package.json"
+  }
 }
