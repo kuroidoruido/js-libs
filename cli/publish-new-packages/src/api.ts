@@ -25,9 +25,11 @@ export async function start(args: Args) {
 
   const packages = listPackagesFromPnpn(args.repo);
   logger.trace('Workspace packages: %o', packages.map(formatPackageShort));
-  const filteredPackages = packages.filter(
-    (p) => !args.ignore.includes(p.name) && !args.ignore.includes(p.path),
-  );
+  const filteredPackages = packages
+    .filter(
+      (p) => !args.ignore.includes(p.name) && !args.ignore.includes(p.path),
+    )
+    .filter((p) => !p.private);
   logger.trace('Found packages: %o', filteredPackages.map(formatPackageShort));
 
   const newPackageVersions = computeNewPackages(

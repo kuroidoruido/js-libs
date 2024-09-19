@@ -26,6 +26,7 @@ export interface Package {
   name: string;
   version: string;
   path: string;
+  private: boolean;
   dependencies: PackageDep[];
   devDependencies: PackageDep[];
 }
@@ -53,6 +54,7 @@ export function listPackagesFromPnpn(repo: string) {
       return {
         name: packageJson.name,
         path,
+        private: packageJson.private,
         version: packageJson.version,
         dependencies: Object.entries(dependencies ?? {}).map(
           ([name, { specifier }]) => ({
