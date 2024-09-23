@@ -45,8 +45,9 @@ export type EmitterResult =
   | PartialEmitterResult
   | ErrorEmitterResult;
 
+export type MessageEmitterContext = BaseContext & { message: string };
 export interface MessageEmitter {
-  (context: BaseContext & { message: string }): Promise<EmitterResult>;
+  (context: MessageEmitterContext): Promise<EmitterResult>;
 }
 
 export function createBot<
