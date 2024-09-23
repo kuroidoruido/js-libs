@@ -1,31 +1,34 @@
 import { EmitterResult, MessageEmitter } from '../bot';
+import { internalSendWithFetch } from './send-with-fetch';
 
 export interface GoogleChatOption {
   spaceUrl: string;
 }
 
 export function googleChat({ spaceUrl }: GoogleChatOption): MessageEmitter {
-  return async ({ botName, message }) => {
+  const internal = internalSendWithFetch({
+    reqBuilder({ message }) {
+      return {
+        url: spaceUrl,
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset=UTF-8' },
+        body: JSON.stringify({ text: message }),
+      };
+    },
+  });
+  return async (context) => {
+    const { botName } = context;
     console.log(
       `[${botName}]{googleChat}: WIll send message to Google Chat ${spaceUrl.slice(0, 45)}...`,
     );
-    return fetch(spaceUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json; charset=UTF-8' },
-      body: JSON.stringify({ text: message }),
-    })
+    return internal(context)
       .then((res): EmitterResult => {
-        res.json().then((json) => {
-          console.log(`[${botName}]{googleChat}: ${res.status} ${json}`);
-        });
-        return { status: 'OK' };
+        console.log(`[${botName}]{googleChat}: OK`);
+        return res;
       })
       .catch((error) => {
         console.error(`[${botName}]{googleChat}: error ${error}`);
-        return Promise.resolve({
-          status: 'KO',
-          errors: [`${error}`],
-        } satisfies EmitterResult);
+        return Promise.reject(error);
       });
   };
 }
