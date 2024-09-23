@@ -9,7 +9,9 @@ describe('emitters/googleChat', () => {
     // GIVEN
     const spaceUrl = 'https://chat.googleapis.com/...';
     const emitters = googleChat({ spaceUrl });
-    mockFetch.mockReturnValue(Promise.resolve({}));
+    mockFetch.mockReturnValue(
+      Promise.resolve({ json: () => Promise.resolve('') }),
+    );
 
     // WHEN
     const res = await emitters({ botName: '', env: {}, message: 'MESSAGE' });
