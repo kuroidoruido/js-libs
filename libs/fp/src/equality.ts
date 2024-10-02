@@ -1,4 +1,6 @@
-export function isEquals<T>(a: T, b: T): boolean {
+import { not } from './basic';
+
+export function isEqual<T>(a: T, b: T): boolean {
   if (typeof a !== typeof b) {
     return false;
   }
@@ -27,5 +29,5 @@ export function isEquals<T>(a: T, b: T): boolean {
 }
 
 export function isDifferent<T>(a: T, b: T): boolean {
-  return !isEquals(a, b);
+  return not(isEqual(a, b));
 }

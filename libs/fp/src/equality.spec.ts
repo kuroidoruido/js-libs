@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'vitest';
-import { isDifferent, isEquals } from './equality';
+import { isDifferent, isEqual } from './equality';
 import { deepClone } from './clone';
 
 const SAME: unknown[] = [
@@ -75,26 +75,26 @@ const DIFF_DIFFERENT_TYPES: [unknown, unknown][] = combineDifferents([
   BigInt('0x1fffffffffffff'),
 ]);
 
-describe(isEquals.name, () => {
+describe(isEqual.name, () => {
   it.each(SAME)('should true for same ref <%o>', (input: unknown) => {
-    expect(isEquals(input, input)).toBe(true);
+    expect(isEqual(input, input)).toBe(true);
   });
   it.each(SAME)(
     'should true for any value and a clone of it <%o>',
     (input: unknown) => {
-      expect(isEquals(input, deepClone(input))).toBe(true);
+      expect(isEqual(input, deepClone(input))).toBe(true);
     },
   );
   it.each(DIFF_SAME_TYPE)(
     'should return false for different objects <%o> === <%o>',
     (a: unknown, b: unknown) => {
-      expect(isEquals(a, b)).toBe(false);
+      expect(isEqual(a, b)).toBe(false);
     },
   );
   it.each(DIFF_DIFFERENT_TYPES)(
     'should return false for objects with different type <%o> === <%o>',
     (a: unknown, b: unknown) => {
-      expect(isEquals(a, b)).toBe(false);
+      expect(isEqual(a, b)).toBe(false);
     },
   );
 });
