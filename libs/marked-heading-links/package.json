@@ -1,7 +1,7 @@
 {
-  "name": "@anthonypena/simple-bot",
-  "version": "1.0.4",
-  "description": "Simple bot framework.",
+  "name": "@anthonypena/marked-heading-links",
+  "version": "0.1.0",
+  "description": "Plugin to have link on every headings.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,
@@ -15,41 +15,29 @@
     "lint": "eslint --ext ts,tsx,js,tsx src",
     "lint-fix": "pnpm lint --fix"
   },
-  "keywords": [],
+  "keywords": [
+    "marked"
+  ],
   "author": "Anthony Pena",
   "license": "MIT",
   "dependencies": {
-    "@anthonypena/fp": "workspace:*"
+    "@anthonypena/slugger": "workspace:*"
   },
   "devDependencies": {
     "@anthonypena/eslint-plugin": "workspace:*",
     "@anthonypena/prettier-config": "workspace:*",
     "@anthonypena/tsconfig": "workspace:*",
+    "@types/marked": "^5.0.0",
     "eslint": "^8.57.0",
+    "marked": "^5.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
     "typescript": "^5.4.3",
     "vitest": "^1.4.0"
   },
-  "prettier": "@anthonypena/prettier-config",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "./emitters": {
-      "types": "./dist/emitters/index.d.ts",
-      "default": "./dist/emitters/index.js"
-    },
-    "./fetchers": {
-      "types": "./dist/fetchers/index.d.ts",
-      "default": "./dist/fetchers/index.js"
-    },
-    "./triggers": {
-      "types": "./dist/triggers.d.ts",
-      "default": "./dist/triggers.js"
-    },
-    "./package.json": "./package.json"
-  }
+  "peerDependencies": {
+    "marked": "=5.x"
+  },
+  "prettier": "@anthonypena/prettier-config"
 }
