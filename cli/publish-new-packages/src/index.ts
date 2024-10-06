@@ -13,7 +13,7 @@ export async function main() {
     ignore:
       typeof options.ignore === 'string'
         ? options.ignore.split(',')
-        : options.ignore ?? [],
+        : (options.ignore ?? []),
   });
 }
 
