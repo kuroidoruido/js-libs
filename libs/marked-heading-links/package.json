@@ -1,6 +1,6 @@
 {
   "name": "@anthonypena/marked-heading-links",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Plugin to have link on every headings.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
