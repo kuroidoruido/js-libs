@@ -14,7 +14,7 @@ export interface GptMessage {
     | string
     | {
         type: 'text';
-        text: 'Write a haiku about programming.';
+        text: string;
       }[];
 }
 
@@ -37,6 +37,7 @@ export function gpt({
         : {};
 
     return fetch(OPENAI_URL, {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apikey}`,
