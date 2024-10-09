@@ -114,6 +114,29 @@ const bot = createBot({
 
 ### Fetchers
 
+#### `gpt`
+
+Ask OpenAI/GPT something.
+
+Parameters:
+
+- `messages`: the message to build chat initialization. [See official documentation for more details.](https://platform.openai.com/docs/api-reference/chat/create#chat-create-messages)
+- `model` (optional): the model to use. [See official documentation to get available values (check /v1/chat/completion)](https://platform.openai.com/docs/models/model-endpoint-compatibility) (default: 'gpt-4o-mini')
+- `apikey` (optional): an OpenAI API Key. (default: env.OPENAI_APIKEY)
+
+Exemple:
+
+```TypeScript
+const bot = createBot({
+    data: gpt({ messages:  [{
+                role: 'user',
+                content: 'Tell me joke',
+            }]
+        }),
+    // ...
+})
+```
+
 #### `http`
 
 Get some data with an HTTP call through `fetch`.
