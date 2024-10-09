@@ -1,12 +1,13 @@
 const OPENAI_URL = 'https://api.openai.com/v1/chat/completions';
 
+import { isNotDefined } from '@anthonypena/fp';
 import { DataFetcher } from '../bot';
 
 export type GptOption = {
   apikey: string;
   model?: string;
   messages: GptMessage[];
-} & ({ format?: 'text'; schema: never } | { format: 'json'; schema: unknown });
+};
 
 export interface GptMessage {
   role: 'system' | 'user' | 'assistant';
@@ -20,22 +21,10 @@ export interface GptMessage {
 
 export function gpt({
   model = 'gpt-4o-mini',
-  format = 'text',
-  schema,
   apikey,
   messages,
-}: GptOption): DataFetcher<{ message: GptMessage }[]> {
+}: GptOption): DataFetcher<string> {
   return () => {
-    const responseFormat =
-      format === 'json'
-        ? {
-            response_format: {
-              type: 'json_schema',
-              json_schema: schema,
-            },
-          }
-        : {};
-
     return fetch(OPENAI_URL, {
       method: 'POST',
       headers: {
@@ -45,10 +34,14 @@ export function gpt({
       body: JSON.stringify({
         model,
         messages,
-        ...responseFormat,
       }),
     })
       .then((res) => res.json())
-      .then((res) => res.choices);
+      .then((res): string => {
+        const content = res.choices?.[0]?.message?.content;
+        if (isNotDefined(content)) {
+        }
+        return typeof content === 'string' ? content : content[0].text;
+      });
   };
 }
