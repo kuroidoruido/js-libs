@@ -1,7 +1,9 @@
 {
   "extends": "@anthonypena/tsconfig/base.json",
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
+    "lib": ["ES2021"],
+    "module": "CommonJS"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["dist", "node_modules", "src/**/*.spec.ts"]
