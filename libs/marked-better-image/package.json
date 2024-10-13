@@ -1,6 +1,6 @@
 {
   "name": "@anthonypena/marked-better-image",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Plugin to improve semantic rendering of images.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
