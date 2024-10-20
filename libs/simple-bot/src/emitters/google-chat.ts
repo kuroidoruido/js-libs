@@ -8,12 +8,11 @@ export interface GoogleChatOption {
 export function googleChat({ spaceUrl }: GoogleChatOption): MessageEmitter {
   const internal = internalSendWithFetch({
     reqBuilder({ message }) {
-      const { text, formattedText } = handleMdFormatting(message);
       return {
         url: spaceUrl,
         method: 'POST',
         headers: { 'Content-Type': 'application/json; charset=UTF-8' },
-        body: JSON.stringify({ text, formattedText }),
+        body: JSON.stringify({ text: handleMdFormatting(message) }),
       };
     },
   });
@@ -36,16 +35,6 @@ export function googleChat({ spaceUrl }: GoogleChatOption): MessageEmitter {
 
 const LINK_PATTERN = /!\[([^\]]*)]\(([^\)]*)\)/g;
 
-function handleMdFormatting(message: string): {
-  text: string;
-  formattedText?: string;
-} {
-  if (message.match(LINK_PATTERN)) {
-    return {
-      text: message.replaceAll(LINK_PATTERN, '$1'),
-      formattedText: message.replaceAll(LINK_PATTERN, '<$2|$1>'),
-    };
-  } else {
-    return { text: message };
-  }
+function handleMdFormatting(message: string): string {
+  return message.replaceAll(LINK_PATTERN, '<$2|$1>');
 }

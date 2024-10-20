@@ -49,7 +49,7 @@ describe('emitters/googleChat', () => {
     expect(res).toStrictEqual({ status: 'OK' });
     expect(mockFetch).toHaveBeenCalledWith(spaceUrl, {
       method: 'POST',
-      body: '{"text":"Foo ici","formattedText":"Foo <https://example.com|ici>"}',
+      body: '{"text":"Foo <https://example.com|ici>"}',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -76,7 +76,7 @@ describe('emitters/googleChat', () => {
     expect(res).toStrictEqual({ status: 'OK' });
     expect(mockFetch).toHaveBeenCalledWith(spaceUrl, {
       method: 'POST',
-      body: '{"text":"Foo ici and there","formattedText":"Foo <https://example.com|ici> and <https://example2.com|there>"}',
+      body: '{"text":"Foo <https://example.com|ici> and <https://example2.com|there>"}',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
       },
