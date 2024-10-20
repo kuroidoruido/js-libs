@@ -13,22 +13,22 @@ npm i @anthonypena/simple-bot
 Every time the script will be run, it will trigger the bot, build the static message and emit the message to the specified Google Chat space.
 
 ```TypeScript
-import { createBot, createBotSpace } from '@anthonypena/simple-bot'
-import { dispatch, googleChat } from '@anthonypena/simple-bot/emitters'
-import { http, nothing, someData } from '@anthonypena/simple-bot/fetchers'
+import { createBot, BotSpace } from '@anthonypena/simple-bot'
+import { googleChat } from '@anthonypena/simple-bot/emitters'
+import { nothing } from '@anthonypena/simple-bot/fetchers'
 import { always } from '@anthonypena/simple-bot/triggers'
 
-const speakerBot = createBot({
+const staticBot = createBot({
     name: 'The Static Bot 🤖',
     trigger: always(),
     data: nothing(),
     message: () => 'This is a static message!',
-    emitter: dispatch(googleChat({ spaceUrl: 'https://chat.googleapis.com/...' }))
-})
+    emitter: googleChat({ spaceUrl: 'https://chat.googleapis.com/...' })
+});
 
-createBotSpace([
-    speakerBot
-], { env: process.env }).run()
+new BotSpace({ env: process.env })
+    .addBots(staticBot)
+    .run();
 ```
 
 ## Docs
@@ -208,6 +208,26 @@ const bot = createBot({
 })
 ```
 
+#### `freeMobile`
+
+Emit the message to a Free Mobile phone number.
+
+> Note: to use Free Mobile notification, you should active it in your account.
+
+Parameters:
+
+- `{login}` (optional): the Free Mobile login of the target phone. (default: env.FREEMOBILE_LOGIN)
+- `{apikey}` (optional): the secret apikey given in the Free Mobile account. (default: env.FREEMOBILE_APIKEY)
+
+Exemple:
+
+```TypeScript
+const bot = createBot({
+    emitter: freeMobile(),
+    // ...
+})
+```
+
 #### `googleChat`
 
 Emit the message to a Google Chat space.
@@ -234,6 +254,27 @@ Exemple:
 ```TypeScript
 const bot = createBot({
     emitter: printInConsole(),
+    // ...
+})
+```
+
+#### `sendWithFetch`
+
+Emit the message with plain HTTP Fetch client.
+
+Parameters:
+
+- `{reqBuilder}`: function to build a request.
+
+Exemple:
+
+```TypeScript
+const bot = createBot({
+    emitter: sendWithFetch({
+        reqBuilder({ message, env }) {
+            return { method: 'POST', url: env.MY_CUSTOM_HTTP_SERVER, body: message }
+        }
+    }),
     // ...
 })
 ```
