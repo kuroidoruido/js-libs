@@ -2,25 +2,28 @@ import { EmitterResult, MessageEmitter } from '../bot';
 import { internalSendWithFetch } from './send-with-fetch';
 
 export interface FreeMobileOption {
-  login: string;
-  apiKey: string;
+  login?: string;
+  apiKey?: string;
 }
 
 export function freeMobile({
   login,
   apiKey,
-}: FreeMobileOption): MessageEmitter {
+}: FreeMobileOption = {}): MessageEmitter {
   const internal = internalSendWithFetch({
-    reqBuilder({ message }) {
+    reqBuilder({ message, env }) {
+      const user = login ?? env.FREEMOBILE_LOGIN;
+      const pass = apiKey ?? env.FREEMOBILE_APIKEY;
       const msg = encodeURI(message);
       return {
-        url: `https://smsapi.free-mobile.fr/sendmsg?user=${login}&pass=${apiKey}&msg=${msg}`,
+        url: `https://smsapi.free-mobile.fr/sendmsg?user=${user}&pass=${pass}&msg=${msg}`,
       };
     },
   });
   return async (context) => {
-    const { botName } = context;
-    console.log(`[${botName}]{freeMobile}: WIll send sms to ${login}`);
+    const { botName, env } = context;
+    const user = login ?? env.FREEMOBILE_LOGIN;
+    console.log(`[${botName}]{freeMobile}: WIll send sms to ${user}`);
     return internal(context)
       .then((res): EmitterResult => {
         console.log(`[${botName}]{freeMobile}: OK`);
