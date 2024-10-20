@@ -31,13 +31,28 @@ export interface Trigger {
   (context: BaseContext): Promise<boolean>;
 }
 
+export type OkFetcherResult<TFetchedData> = {
+  status: 'OK';
+  data: TFetchedData;
+};
+export type PartialFetcherResult<TFetchedData> = {
+  status: 'PARTIAL';
+  details: string[];
+  data: Partial<TFetchedData>;
+};
+export type ErrorFetcherResult = { status: 'KO'; errors?: string[] };
+export type FetcherResult<TFetchedData> =
+  | OkFetcherResult<TFetchedData>
+  | PartialFetcherResult<TFetchedData>
+  | ErrorFetcherResult;
+
 export interface DataFetcher<TFetchedData> {
-  (context: BaseContext): Promise<TFetchedData>;
+  (context: BaseContext): Promise<FetcherResult<TFetchedData>>;
 }
 
 export interface MessageBuilder<TFetchedData> {
   (
-    context: BaseContext & { data: TFetchedData },
+    context: BaseContext & { data: FetcherResult<TFetchedData> },
   ): Nullish | string | Promise<string>;
 }
 

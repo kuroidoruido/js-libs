@@ -17,7 +17,7 @@ describe('fetchers/http', () => {
     const res = await fetcher({ botName: '', env: {} });
 
     // THEN
-    expect(res).toStrictEqual({ foo: 'bar' });
+    expect(res).toStrictEqual({ status: 'OK', data: { foo: 'bar' } });
     expect(mockFetch).toHaveBeenCalledWith(url, {});
     expect(mockFetch).toHaveBeenCalledTimes(1);
   });

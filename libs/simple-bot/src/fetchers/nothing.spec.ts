@@ -13,6 +13,6 @@ describe('fetchers/nothing', () => {
     const res = await fetcher({ botName: '', env: {} });
 
     // THEN
-    expect(res).toStrictEqual({});
+    expect(res).toStrictEqual({ status: 'OK', data: {} });
   });
 });

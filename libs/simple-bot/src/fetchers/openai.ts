@@ -1,7 +1,7 @@
 const OPENAI_URL = 'https://api.openai.com/v1/chat/completions';
 
 import { isNotDefined } from '@anthonypena/fp';
-import { DataFetcher } from '../bot';
+import { DataFetcher, FetcherResult } from '../bot';
 
 export type GptOption = {
   apikey?: string;
@@ -68,6 +68,10 @@ export function gpt({
         if (isNotDefined(content)) {
         }
         return typeof content === 'string' ? content : content[0].text;
-      });
+      })
+      .then((data): FetcherResult<string> => ({ status: 'OK', data }))
+      .catch(
+        (errors): FetcherResult<string> => ({ status: 'KO', errors: [errors] }),
+      );
   };
 }

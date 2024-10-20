@@ -1,5 +1,5 @@
 import { DataFetcher } from '../bot';
 
 export function nothing(): DataFetcher<Record<string, never>> {
-  return async () => ({});
+  return async () => ({ status: 'OK', data: {} });
 }
