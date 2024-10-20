@@ -19,7 +19,8 @@
   "author": "Anthony Pena",
   "license": "MIT",
   "dependencies": {
-    "@anthonypena/fp": "workspace:*"
+    "@anthonypena/fp": "workspace:*",
+    "@anthonypena/types-utils": "workspace:*"
   },
   "devDependencies": {
     "@anthonypena/eslint-plugin": "workspace:*",

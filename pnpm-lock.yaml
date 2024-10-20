@@ -547,6 +547,9 @@ importers:
       '@anthonypena/fp':
         specifier: workspace:*
         version: link:../fp
+      '@anthonypena/types-utils':
+        specifier: workspace:*
+        version: link:../types-utils
     devDependencies:
       '@anthonypena/eslint-plugin':
         specifier: workspace:*

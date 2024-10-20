@@ -1,3 +1,5 @@
+import { Nullish } from '@anthonypena/types-utils';
+
 export interface Bot<
   TFetchedData extends Record<string, unknown> = Record<string, never>,
 > {
@@ -34,7 +36,9 @@ export interface DataFetcher<TFetchedData> {
 }
 
 export interface MessageBuilder<TFetchedData> {
-  (context: BaseContext & { data: TFetchedData }): string;
+  (
+    context: BaseContext & { data: TFetchedData },
+  ): Nullish | string | Promise<string>;
 }
 
 export type OkEmitterResult = { status: 'OK' };
