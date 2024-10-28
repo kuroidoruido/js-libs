@@ -24,7 +24,7 @@ export interface Bot<
 
 export interface BaseContext {
   botName: string;
-  env: Record<string, string>;
+  env: Record<string, string | undefined>;
 }
 
 export interface Trigger {

@@ -1,10 +1,12 @@
-export function env<TEnv extends Record<string, string>>(env: TEnv): TEnv {
+export function env<TEnv extends Record<string, string | undefined>>(
+  env: TEnv,
+): TEnv {
   return Object.fromEntries(
     Object.entries(env).map(([k, v]) => [k, decodeIfNeeded(v)]),
   ) as TEnv;
 }
 
-function decodeIfNeeded(v: string): string {
+function decodeIfNeeded(v: string | undefined): string | undefined {
   if (v?.startsWith('base64:')) {
     return decodeBase64(v);
   }

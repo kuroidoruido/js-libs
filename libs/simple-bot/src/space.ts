@@ -4,30 +4,29 @@ import { printInConsole } from './emitters/print-in-console';
 import { env } from './env';
 
 export interface SpaceConfig {
-  env: Record<string, string>;
+  env: Record<string, string | undefined>;
 }
 
+export type BotModel = Record<string, unknown>;
 export interface BotBuilder<
-  TFetchedData extends Record<string, unknown> = Record<string, never>,
+  TFetchedData extends BotModel = Record<string, never>,
 > {
   (config: SpaceConfig): Bot<TFetchedData>;
 }
 
+export type BotInit<T extends BotModel> = Bot<T> | BotBuilder<T>;
+
 export class BotSpace {
-  private bots: Bot<Record<string, unknown>>[] = [];
+  private bots: Bot<BotModel>[] = [];
 
   constructor(private config: SpaceConfig) {
     this.config.env = env(this.config.env);
   }
 
-  addBots(
-    ...bots: (
-      | Bot<Record<string, unknown>>
-      | BotBuilder<Record<string, unknown>>
-    )[]
-  ) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  addBots(...bots: BotInit<any>[]): BotSpace {
     this.bots.push(
-      ...bots.map((bot) =>
+      ...(bots as BotInit<BotModel>[]).map((bot) =>
         typeof bot === 'function' ? bot(this.config) : bot,
       ),
     );
