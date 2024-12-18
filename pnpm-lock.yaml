@@ -394,6 +394,46 @@ importers:
         specifier: ^1.4.0
         version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
+  libs/marked-styled-image:
+    dependencies:
+      '@anthonypena/fp':
+        specifier: workspace:*
+        version: link:../fp
+    devDependencies:
+      '@anthonypena/eslint-plugin':
+        specifier: workspace:*
+        version: link:../eslint-plugin
+      '@anthonypena/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier-config
+      '@anthonypena/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/marked':
+        specifier: ^5.0.0
+        version: 5.0.2
+      eslint:
+        specifier: ^8.57.0
+        version: 8.57.1
+      marked:
+        specifier: ^5.0.0
+        version: 5.1.2
+      npm-run-all:
+        specifier: ^4.1.5
+        version: 4.1.5
+      prettier:
+        specifier: ^3.2.5
+        version: 3.3.3
+      rimraf:
+        specifier: ^5.0.5
+        version: 5.0.10
+      typescript:
+        specifier: ^5.4.3
+        version: 5.4.5
+      vitest:
+        specifier: ^1.4.0
+        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+
   libs/ngx-outside-click:
     dependencies:
       '@angular/animations':
@@ -3484,6 +3524,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -7704,7 +7745,7 @@ snapshots:
       proc-log: 4.2.0
       promise-inflight: 1.0.1
       promise-retry: 2.0.1
-      semver: 7.6.0
+      semver: 7.6.3
       which: 4.0.0
     transitivePeerDependencies:
       - bluebird
@@ -7724,7 +7765,7 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       normalize-package-data: 6.0.2
       proc-log: 4.2.0
-      semver: 7.6.0
+      semver: 7.6.3
     transitivePeerDependencies:
       - bluebird
 
@@ -8689,7 +8730,7 @@ snapshots:
       dom-serializer: 2.0.0
       domhandler: 5.0.3
       htmlparser2: 8.0.2
-      postcss: 8.4.35
+      postcss: 8.4.47
       postcss-media-query-parser: 0.2.3
 
   cross-spawn@6.0.5:
@@ -8708,14 +8749,14 @@ snapshots:
 
   css-loader@6.10.0(webpack@5.94.0(esbuild@0.20.1)):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.35)
-      postcss: 8.4.35
-      postcss-modules-extract-imports: 3.1.0(postcss@8.4.35)
-      postcss-modules-local-by-default: 4.0.5(postcss@8.4.35)
-      postcss-modules-scope: 3.2.0(postcss@8.4.35)
-      postcss-modules-values: 4.0.0(postcss@8.4.35)
+      icss-utils: 5.1.0(postcss@8.4.47)
+      postcss: 8.4.47
+      postcss-modules-extract-imports: 3.1.0(postcss@8.4.47)
+      postcss-modules-local-by-default: 4.0.5(postcss@8.4.47)
+      postcss-modules-scope: 3.2.0(postcss@8.4.47)
+      postcss-modules-values: 4.0.0(postcss@8.4.47)
       postcss-value-parser: 4.2.0
-      semver: 7.6.0
+      semver: 7.6.3
     optionalDependencies:
       webpack: 5.94.0(esbuild@0.20.1)
 
@@ -9662,9 +9703,9 @@ snapshots:
     dependencies:
       safer-buffer: 2.1.2
 
-  icss-utils@5.1.0(postcss@8.4.35):
+  icss-utils@5.1.0(postcss@8.4.47):
     dependencies:
-      postcss: 8.4.35
+      postcss: 8.4.47
 
   ieee754@1.2.1: {}
 
@@ -10366,7 +10407,7 @@ snapshots:
       make-fetch-happen: 13.0.1
       nopt: 7.2.1
       proc-log: 4.2.0
-      semver: 7.6.0
+      semver: 7.6.3
       tar: 6.2.1
       which: 4.0.0
     transitivePeerDependencies:
@@ -10388,7 +10429,7 @@ snapshots:
   normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      semver: 7.6.0
+      semver: 7.6.3
       validate-npm-package-license: 3.0.4
 
   normalize-path@3.0.0: {}
@@ -10401,7 +10442,7 @@ snapshots:
 
   npm-install-checks@6.3.0:
     dependencies:
-      semver: 7.6.0
+      semver: 7.6.3
 
   npm-normalize-package-bin@3.0.1: {}
 
@@ -10409,7 +10450,7 @@ snapshots:
     dependencies:
       hosted-git-info: 7.0.2
       proc-log: 3.0.0
-      semver: 7.6.0
+      semver: 7.6.3
       validate-npm-package-name: 5.0.1
 
   npm-packlist@8.0.2:
@@ -10421,7 +10462,7 @@ snapshots:
       npm-install-checks: 6.3.0
       npm-normalize-package-bin: 3.0.1
       npm-package-arg: 11.0.1
-      semver: 7.6.0
+      semver: 7.6.3
 
   npm-registry-fetch@16.2.1:
     dependencies:
@@ -10738,7 +10779,7 @@ snapshots:
       cosmiconfig: 9.0.0(typescript@5.4.5)
       jiti: 1.21.6
       postcss: 8.4.35
-      semver: 7.6.0
+      semver: 7.6.3
     optionalDependencies:
       webpack: 5.94.0(esbuild@0.20.1)
     transitivePeerDependencies:
@@ -10746,26 +10787,26 @@ snapshots:
 
   postcss-media-query-parser@0.2.3: {}
 
-  postcss-modules-extract-imports@3.1.0(postcss@8.4.35):
+  postcss-modules-extract-imports@3.1.0(postcss@8.4.47):
     dependencies:
-      postcss: 8.4.35
+      postcss: 8.4.47
 
-  postcss-modules-local-by-default@4.0.5(postcss@8.4.35):
+  postcss-modules-local-by-default@4.0.5(postcss@8.4.47):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.35)
-      postcss: 8.4.35
+      icss-utils: 5.1.0(postcss@8.4.47)
+      postcss: 8.4.47
       postcss-selector-parser: 6.1.2
       postcss-value-parser: 4.2.0
 
-  postcss-modules-scope@3.2.0(postcss@8.4.35):
+  postcss-modules-scope@3.2.0(postcss@8.4.47):
     dependencies:
-      postcss: 8.4.35
+      postcss: 8.4.47
       postcss-selector-parser: 6.1.2
 
-  postcss-modules-values@4.0.0(postcss@8.4.35):
+  postcss-modules-values@4.0.0(postcss@8.4.47):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.35)
-      postcss: 8.4.35
+      icss-utils: 5.1.0(postcss@8.4.47)
+      postcss: 8.4.47
 
   postcss-selector-parser@6.1.2:
     dependencies:
@@ -10969,7 +11010,7 @@ snapshots:
       adjust-sourcemap-loader: 4.0.0
       convert-source-map: 1.9.0
       loader-utils: 2.0.4
-      postcss: 8.4.35
+      postcss: 8.4.47
       source-map: 0.6.1
 
   resolve@1.22.8:
@@ -11684,7 +11725,7 @@ snapshots:
   vite@5.1.8(@types/node@20.16.10)(less@4.2.0)(sass@1.71.1)(terser@5.29.1):
     dependencies:
       esbuild: 0.19.12
-      postcss: 8.4.35
+      postcss: 8.4.47
       rollup: 4.24.0
     optionalDependencies:
       '@types/node': 20.16.10
