@@ -1,11 +1,11 @@
-import { Marked } from "marked";
-import { describe, expect, it } from "vitest";
+import { Marked } from 'marked';
+import { describe, expect, it } from 'vitest';
 
-import { markedStyledImage } from "./marked-styled-image";
+import { markedStyledImage } from './marked-styled-image';
 
 describe(markedStyledImage.name, () => {
   it.each([
-    ["![](./img/foo.jpg)", '<p><img src="./img/foo.jpg" alt=""/></p>\n'],
+    ['![](./img/foo.jpg)', '<p><img src="./img/foo.jpg" alt=""/></p>\n'],
     [`![](./img/foo.jpg "")`, '<p><img src="./img/foo.jpg" alt=""/></p>\n'],
     [
       `![](./img/foo.jpg "bg")`,
@@ -33,7 +33,7 @@ describe(markedStyledImage.name, () => {
     ],
   ])('should add defined class (md="%s" => html="%s")', (md, html) => {
     const marked = new Marked({ headerIds: false, mangle: false });
-    marked.use(markedStyledImage({ knownStyles: ["bg", "w-100"] }));
+    marked.use(markedStyledImage({ knownStyles: ['bg', 'w-100'] }));
 
     expect(marked.parse(md)).toBe(html);
   });

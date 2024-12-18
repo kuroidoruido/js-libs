@@ -1,1 +1,1 @@
-export * from "./marked-styled-image";
+export * from './marked-styled-image';
