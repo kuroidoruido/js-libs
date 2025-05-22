@@ -1,9 +1,0 @@
-{
-  "extends": "@anthonypena/tsconfig/base.json",
-  "compilerOptions": {
-    "target": "es2017",
-    "outDir": "dist"
-  },
-  "include": ["src/**/*.ts"],
-  "exclude": ["dist", "node_modules", "src/**/*.spec.ts"]
-}

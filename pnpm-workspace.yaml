@@ -1,4 +1,0 @@
-packages:
-  - 'libs/*'
-  - '!libs/_*'
-  - 'cli/*'
