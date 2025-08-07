@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 
 import { markedImageGallery } from './marked-image-gallery';
 
-const marked = new Marked({ headerIds: false, mangle: false });
+const marked = new Marked();
 marked.use(markedImageGallery());
 
 describe(markedImageGallery.name, () => {

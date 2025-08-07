@@ -1,5 +1,7 @@
 # @anthonypena/marked-image-gallery
 
+Need `marked` >= 16
+
 ## Install
 
 ```Bash

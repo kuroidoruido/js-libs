@@ -1,4 +1,4 @@
-import { marked, Marked } from 'marked';
+import { marked, Marked, type MarkedExtension, Tokens } from 'marked';
 import { Slugger } from '@anthonypena/slugger';
 import { isDefinedAndNotEmpty } from '@anthonypena/fp';
 import { figcaption, figure, img } from './html.utils';
@@ -9,20 +9,19 @@ export interface MarkedImageGalleryOptions {
 }
 
 const defaultMarkedInstance = new Marked();
-defaultMarkedInstance.setOptions({ mangle: false, headerIds: false });
 
 const IMAGE_GALLERY_TYPE = 'imageGallery';
 
 interface ImageGalleryToken {
   raw: string;
   type: typeof IMAGE_GALLERY_TYPE;
-  images: marked.Tokens.Image[];
+  images: Tokens.Image[];
 }
 
 export function markedImageGallery({
   idPrefix = 'image-gallery-',
   marked: markedInstance = defaultMarkedInstance,
-}: MarkedImageGalleryOptions = {}): marked.MarkedExtension {
+}: MarkedImageGalleryOptions = {}): MarkedExtension {
   let slugger: Slugger;
   function beforeStartNewDocument() {
     slugger = new Slugger(idPrefix);
@@ -47,10 +46,10 @@ export function markedImageGallery({
           const rawParagraphToken = marked.lexer(raw)[0]!;
           const rawImagesTokens =
             rawParagraphToken?.type === 'paragraph'
-              ? rawParagraphToken.tokens
+              ? (rawParagraphToken.tokens ?? [])
               : [];
           const images = rawImagesTokens.filter(
-            (t): t is marked.Tokens.Image => t.type === 'image',
+            (t): t is Tokens.Image => t.type === 'image',
           );
 
           if (images.length <= 1) {
@@ -63,7 +62,7 @@ export function markedImageGallery({
             images,
           };
         },
-        renderer(token: marked.Tokens.Generic | ImageGalleryToken) {
+        renderer(token: Tokens.Generic | ImageGalleryToken) {
           if (!isImageGalleryToken(token)) {
             return false;
           }

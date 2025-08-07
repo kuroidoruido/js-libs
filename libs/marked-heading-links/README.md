@@ -1,5 +1,7 @@
 # @anthonypena/marked-heading-links
 
+Need `marked` >= 16
+
 ## Install
 
 ```Bash

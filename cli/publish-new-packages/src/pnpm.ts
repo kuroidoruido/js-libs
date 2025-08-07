@@ -106,10 +106,15 @@ export async function pnpmPack(repo: string, packagePath: string) {
   return pnpmExec(repo, packagePath, 'pnpm pack');
 }
 
-export async function pnpmPublish(repo: string, packagePath: string) {
+export async function pnpmPublish(
+  repo: string,
+  packagePath: string,
+  packageVersion: string,
+) {
   return pnpmExec(
     repo,
     packagePath,
-    'pnpm publish --no-git-checks --access=public',
+    'pnpm publish --no-git-checks --access=public' +
+      (packageVersion.includes('-beta.') ? ' --tag beta' : ''),
   );
 }

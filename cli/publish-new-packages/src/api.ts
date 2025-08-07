@@ -129,7 +129,7 @@ export async function publishPackage(
   }
   // TODO
   // await pnpmPack(repo, p.path);
-  await pnpmPublish(repo, p.path);
+  await pnpmPublish(repo, p.path, p.version);
   logger.info('Package %s published', formatPackageShort(p));
 }
 

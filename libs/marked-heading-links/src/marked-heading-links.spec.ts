@@ -30,13 +30,13 @@ describe(markedHeadingLinks.name, () => {
       '<h6 id="foo">Foo<a href="#foo" class="anchor" aria-label="permalink">🔗</a></h6>\n',
     ],
   ])('should add link to heading (md="%s")', (md, html) => {
-    const marked = new Marked({ headerIds: false, mangle: false });
+    const marked = new Marked();
     marked.use(markedHeadingLinks());
 
     expect(marked.parse(md)).toBe(html);
   });
   it('should parse simple file', () => {
-    const marked = new Marked({ headerIds: false, mangle: false });
+    const marked = new Marked();
     marked.use(markedHeadingLinks());
 
     const md = `This is a simple introduction\n\n## Short heading\n\nPart sentence.\nAlso in the first paragraph.\n\nAnother paragraph.`;
@@ -44,7 +44,7 @@ describe(markedHeadingLinks.name, () => {
     expect(marked.parse(md)).toBe(html);
   });
   it('should use custom Marked instance', () => {
-    const marked = new Marked({ headerIds: false });
+    const marked = new Marked();
     marked.use({ renderer: { text: () => '🦄' } });
     marked.use(markedHeadingLinks({ marked }));
 
@@ -53,7 +53,7 @@ describe(markedHeadingLinks.name, () => {
     expect(marked.parse(md)).toBe(html);
   });
   it('should use prefix', () => {
-    const marked = new Marked({ headerIds: false, mangle: false });
+    const marked = new Marked();
     marked.use(markedHeadingLinks({ prefix: 'foo__' }));
 
     const md = `## Short heading`;
@@ -61,7 +61,7 @@ describe(markedHeadingLinks.name, () => {
     expect(marked.parse(md)).toBe(html);
   });
   it('should use linkClass', () => {
-    const marked = new Marked({ headerIds: false, mangle: false });
+    const marked = new Marked();
     marked.use(markedHeadingLinks({ linkClass: 'my-link' }));
 
     const md = `## Short heading`;
@@ -69,7 +69,7 @@ describe(markedHeadingLinks.name, () => {
     expect(marked.parse(md)).toBe(html);
   });
   it('should use linkLabel', () => {
-    const marked = new Marked({ headerIds: false, mangle: false });
+    const marked = new Marked();
     marked.use(markedHeadingLinks({ linkLabel: 'link' }));
 
     const md = `## Short heading`;
