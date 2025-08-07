@@ -1,4 +1,4 @@
-import { Marked, type marked } from 'marked';
+import { Marked, MarkedExtension } from 'marked';
 import { Slugger } from '@anthonypena/slugger';
 
 export interface MarkedHeadingLinksOptions {
@@ -9,17 +9,15 @@ export interface MarkedHeadingLinksOptions {
 }
 
 const defaultMarkedInstance = new Marked();
-defaultMarkedInstance.setOptions({ mangle: false, headerIds: false });
 
 export function markedHeadingLinks({
   prefix = '',
   linkClass = 'anchor',
   linkLabel = '🔗',
   marked: markedInstance = defaultMarkedInstance,
-}: MarkedHeadingLinksOptions = {}): marked.MarkedExtension {
+}: MarkedHeadingLinksOptions = {}): MarkedExtension {
   let slugger: Slugger;
   return {
-    headerIds: false,
     hooks: {
       preprocess(src) {
         slugger = new Slugger(prefix);
@@ -27,10 +25,10 @@ export function markedHeadingLinks({
       },
     },
     renderer: {
-      heading(text, level, raw) {
-        const id = slugger.slug(raw);
+      heading({ text, depth, raw }) {
+        const id = slugger.slug(raw.slice(depth));
         const mdText = markedInstance.parseInline(text);
-        return `<h${level} id="${id}">${mdText}<a href="#${id}" class="${linkClass}" aria-label="permalink">${linkLabel}</a></h${level}>\n`;
+        return `<h${depth} id="${id}">${mdText}<a href="#${id}" class="${linkClass}" aria-label="permalink">${linkLabel}</a></h${depth}>\n`;
       },
     },
   };
