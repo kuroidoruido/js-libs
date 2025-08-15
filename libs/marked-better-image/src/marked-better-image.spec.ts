@@ -5,7 +5,7 @@ import { markedBetterImage } from './marked-better-image';
 
 describe(markedBetterImage.name, () => {
   it('should parse image without alt with simple img tag', () => {
-    const marked = new Marked({ headerIds: false, mangle: false });
+    const marked = new Marked();
     marked.use(markedBetterImage());
     const md = `![](./foo.png)\n`;
     const html = `<img src="./foo.png" aria-hidden="true"/>\n`;
@@ -13,7 +13,7 @@ describe(markedBetterImage.name, () => {
   });
 
   it('should parse image with alt with figure and figcaption', () => {
-    const marked = new Marked({ headerIds: false, mangle: false });
+    const marked = new Marked();
     marked.use(markedBetterImage());
     const md = `![Alternative text](./foo.png)\n`;
     const html = `<figure>\n<img src="./foo.png" alt="Alternative text"/>\n<figcaption>Alternative text</figcaption>\n</figure>\n`;
@@ -21,7 +21,7 @@ describe(markedBetterImage.name, () => {
   });
 
   it('should parse image with alt and title with figure and figcaption', () => {
-    const marked = new Marked({ headerIds: false, mangle: false });
+    const marked = new Marked();
     marked.use(markedBetterImage());
     const md = `![Alternative text](./foo.png "Caption text")\n`;
     const html = `<figure>\n<img src="./foo.png" alt="Alternative text" title="Caption text"/>\n<figcaption>Caption text</figcaption>\n</figure>\n`;
@@ -29,7 +29,7 @@ describe(markedBetterImage.name, () => {
   });
 
   it('should parse markdown in figcaption', () => {
-    const marked = new Marked({ headerIds: false, mangle: false });
+    const marked = new Marked();
     marked.use(markedBetterImage());
     const md = `![Alternative text](./foo.png "*Caption* **text**")\n`;
     const html = `<figure>\n<img src="./foo.png" alt="Alternative text" title="*Caption* **text**"/>\n<figcaption><em>Caption</em> <strong>text</strong></figcaption>\n</figure>\n`;
@@ -37,7 +37,7 @@ describe(markedBetterImage.name, () => {
   });
 
   it('should parse image with only title with figure and figcaption', () => {
-    const marked = new Marked({ headerIds: false, mangle: false });
+    const marked = new Marked();
     marked.use(markedBetterImage());
     const md = `![](./foo.png "Caption text")\n`;
     const html = `<figure>\n<img src="./foo.png" alt="Caption text" title="Caption text"/>\n<figcaption>Caption text</figcaption>\n</figure>\n`;
@@ -45,7 +45,7 @@ describe(markedBetterImage.name, () => {
   });
 
   it('should parse basic image beside other elements', () => {
-    const marked = new Marked({ headerIds: false, mangle: false });
+    const marked = new Marked();
     marked.use(markedBetterImage());
     const md = `Some text.\n\n![](./foo.png)\n\nAnother text.`;
     const html = `<p>Some text.</p>\n<img src="./foo.png" aria-hidden="true"/>\n<p>Another text.</p>\n`;
@@ -53,7 +53,7 @@ describe(markedBetterImage.name, () => {
   });
 
   it('should parse image beside other elements', () => {
-    const marked = new Marked({ headerIds: false, mangle: false });
+    const marked = new Marked();
     marked.use(markedBetterImage());
     const md = `Some text.\n\n![Alternative text](./foo.png)\n\nAnother text.`;
     const html = `<p>Some text.</p>\n<figure>\n<img src="./foo.png" alt="Alternative text"/>\n<figcaption>Alternative text</figcaption>\n</figure>\n<p>Another text.</p>\n`;
@@ -61,7 +61,7 @@ describe(markedBetterImage.name, () => {
   });
 
   it('should use custom Marked instance', () => {
-    const marked = new Marked({ headerIds: false, mangle: false });
+    const marked = new Marked();
     marked.use({ renderer: { text: () => '🦄' } });
     marked.use(markedBetterImage({ marked }));
 

@@ -10,7 +10,7 @@ export function figure(
 }
 
 export function figcaption(markedInstance: Marked, ...childrens: string[]) {
-  return `<figcaption>${markedInstance.parseInline(childrens.join('\n'), { mangle: false, headerIds: false })}</figcaption>`;
+  return `<figcaption>${markedInstance.parseInline(childrens.join('\n'))}</figcaption>`;
 }
 
 export type ImgOptions = { ariaHidden?: boolean; title?: string; alt?: string };

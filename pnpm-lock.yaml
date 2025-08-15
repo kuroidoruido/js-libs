@@ -206,15 +206,12 @@ importers:
       '@anthonypena/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
-      '@types/marked':
-        specifier: ^5.0.0
-        version: 5.0.2
       eslint:
         specifier: ^8.57.0
         version: 8.57.1
       marked:
-        specifier: ^5.0.0
-        version: 5.1.2
+        specifier: ^16.0.0
+        version: 16.1.2
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
@@ -224,6 +221,9 @@ importers:
       rimraf:
         specifier: ^5.0.5
         version: 5.0.10
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(jiti@1.21.6)(postcss@8.4.47)(tsx@4.19.1)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.3
         version: 5.4.5
@@ -10697,7 +10697,7 @@ snapshots:
 
   launch-editor@2.9.1:
     dependencies:
-      picocolors: 1.1.0
+      picocolors: 1.1.1
       shell-quote: 1.8.1
 
   less-loader@11.1.0(less@4.2.0)(webpack@5.94.0(esbuild@0.20.1)):
@@ -12083,7 +12083,7 @@ snapshots:
 
   spdy@4.0.2:
     dependencies:
-      debug: 4.3.7
+      debug: 4.4.1
       handle-thing: 2.0.1
       http-deceiver: 1.2.7
       select-hose: 2.0.0

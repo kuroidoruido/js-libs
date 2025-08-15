@@ -1,13 +1,13 @@
 {
   "name": "@anthonypena/marked-better-image",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Plugin to improve semantic rendering of images.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.mts",
   "private": false,
   "scripts": {
     "clean": "rimraf ./dist",
-    "build-ts": "tsc",
+    "build-ts": "tsup src/index.ts",
     "build": "run-s clean build-ts",
     "test": "vitest",
     "pretty": "prettier . --check",
@@ -27,17 +27,17 @@
     "@anthonypena/eslint-plugin": "workspace:*",
     "@anthonypena/prettier-config": "workspace:*",
     "@anthonypena/tsconfig": "workspace:*",
-    "@types/marked": "^5.0.0",
     "eslint": "^8.57.0",
-    "marked": "^5.0.0",
+    "marked": "^16.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
+    "tsup": "^8.5.0",
     "typescript": "^5.4.3",
     "vitest": "^1.4.0"
   },
   "peerDependencies": {
-    "marked": "=5.x"
+    "marked": "=16.x"
   },
   "prettier": "@anthonypena/prettier-config"
 }

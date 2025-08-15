@@ -1,5 +1,5 @@
 import { isDefinedAndNotEmpty, isNotDefinedOrEmpty } from '@anthonypena/fp';
-import { marked, Marked } from 'marked';
+import { marked, Marked, type MarkedExtension, type Tokens } from 'marked';
 import { figcaption, figure, img } from './html.utils';
 
 export interface MarkedBetterImageOptions {
@@ -7,13 +7,12 @@ export interface MarkedBetterImageOptions {
 }
 
 const defaultMarkedInstance = new Marked();
-defaultMarkedInstance.setOptions({ mangle: false, headerIds: false });
 
 const BETTER_IMAGE_TYPE = 'betterImage';
 
 export function markedBetterImage({
   marked: markedInstance = defaultMarkedInstance,
-}: MarkedBetterImageOptions = {}): marked.MarkedExtension {
+}: MarkedBetterImageOptions = {}): MarkedExtension {
   return {
     extensions: [
       {
@@ -26,7 +25,7 @@ export function markedBetterImage({
             const paragraph = found[0]!;
             if (
               paragraph.type === 'paragraph' &&
-              paragraph.tokens.length === 1 &&
+              paragraph.tokens?.length === 1 &&
               paragraph.tokens[0]!.type === 'image'
             ) {
               return { ...paragraph.tokens[0]!, type: BETTER_IMAGE_TYPE };
@@ -40,10 +39,10 @@ export function markedBetterImage({
           }
           const { href, title } = token;
           const caption = isDefinedAndNotEmpty(token.title)
-            ? markedInstance.parseInline(token.title)
+            ? markedInstance.parseInline(token.title, { async: false })
             : token.title;
           const alt = isDefinedAndNotEmpty(token.text)
-            ? markedInstance.parseInline(token.text)
+            ? markedInstance.parseInline(token.text, { async: false })
             : token.text;
 
           if (isNotDefinedOrEmpty(href)) {
@@ -63,7 +62,7 @@ export function markedBetterImage({
               figure(
                 {},
                 img(href, { title, alt: title }),
-                figcaption(markedInstance, caption),
+                figcaption(markedInstance, caption!),
               ) + '\n'
             );
           }
@@ -80,12 +79,12 @@ export function markedBetterImage({
   };
 }
 
-type BetterImageToken = Omit<marked.Tokens.Image, 'type'> & {
+type BetterImageToken = Omit<Tokens.Image, 'type'> & {
   type: typeof BETTER_IMAGE_TYPE;
 };
 
 export function isBetterImageToken(
-  token: marked.Tokens.Generic | BetterImageToken,
+  token: Tokens.Generic | BetterImageToken,
 ): token is BetterImageToken {
   return token.type === BETTER_IMAGE_TYPE;
 }
