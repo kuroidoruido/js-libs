@@ -1,9 +1,9 @@
 {
   "name": "@anthonypena/marked-image-gallery",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Plugin to generate image gallery from images.",
   "main": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "types": "dist/index.d.mts",
   "private": false,
   "scripts": {
     "clean": "rimraf ./dist",
