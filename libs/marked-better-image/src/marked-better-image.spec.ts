@@ -69,4 +69,11 @@ describe(markedBetterImage.name, () => {
     const html = `<p>🦄</p>\n<figure>\n<img src="./foo.png" alt="🦄"/>\n<figcaption>🦄</figcaption>\n</figure>\n`;
     expect(marked.parse(md)).toBe(html);
   });
+  it('should parse image add is attribute on img tag', () => {
+    const marked = new Marked();
+    marked.use(markedBetterImage({ is: 'custom-component' }));
+    const md = `![](./foo.png)\n`;
+    const html = `<img src="./foo.png" aria-hidden="true" is="custom-component"/>\n`;
+    expect(marked.parse(md)).toBe(html);
+  });
 });

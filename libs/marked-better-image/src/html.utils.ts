@@ -13,8 +13,16 @@ export function figcaption(markedInstance: Marked, ...childrens: string[]) {
   return `<figcaption>${markedInstance.parseInline(childrens.join('\n'))}</figcaption>`;
 }
 
-export type ImgOptions = { ariaHidden?: boolean; title?: string; alt?: string };
-export function img(href: string, { ariaHidden, title, alt }: ImgOptions = {}) {
+export type ImgOptions = {
+  ariaHidden?: boolean;
+  title?: string;
+  alt?: string;
+  is?: string;
+};
+export function img(
+  href: string,
+  { ariaHidden, title, alt, is }: ImgOptions = {},
+) {
   const attributes = [
     // aria-hidden
     ariaHidden ? 'aria-hidden="true"' : undefined,
@@ -22,6 +30,8 @@ export function img(href: string, { ariaHidden, title, alt }: ImgOptions = {}) {
     isDefinedAndNotEmpty(alt) ? `alt="${alt}"` : undefined,
     // title
     isDefinedAndNotEmpty(title) ? `title="${title}"` : undefined,
+    // is
+    isDefinedAndNotEmpty(is) ? `is="${is}"` : undefined,
   ]
     .filter(isDefinedAndNotEmpty)
     .join(' ');

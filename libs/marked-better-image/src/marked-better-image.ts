@@ -4,6 +4,7 @@ import { figcaption, figure, img } from './html.utils';
 
 export interface MarkedBetterImageOptions {
   marked?: Marked;
+  is?: string;
 }
 
 const defaultMarkedInstance = new Marked();
@@ -12,6 +13,7 @@ const BETTER_IMAGE_TYPE = 'betterImage';
 
 export function markedBetterImage({
   marked: markedInstance = defaultMarkedInstance,
+  is,
 }: MarkedBetterImageOptions = {}): MarkedExtension {
   return {
     extensions: [
@@ -52,7 +54,7 @@ export function markedBetterImage({
             return (
               figure(
                 {},
-                img(href, { title, alt }),
+                img(href, { title, alt, is }),
                 figcaption(markedInstance, title),
               ) + '\n'
             );
@@ -61,18 +63,21 @@ export function markedBetterImage({
             return (
               figure(
                 {},
-                img(href, { title, alt: title }),
+                img(href, { title, alt: title, is }),
                 figcaption(markedInstance, caption!),
               ) + '\n'
             );
           }
           if (isDefinedAndNotEmpty(alt)) {
             return (
-              figure({}, img(href, { alt }), figcaption(markedInstance, alt)) +
-              '\n'
+              figure(
+                {},
+                img(href, { alt, is }),
+                figcaption(markedInstance, alt),
+              ) + '\n'
             );
           }
-          return img(href, { ariaHidden: true }) + '\n';
+          return img(href, { ariaHidden: true, is }) + '\n';
         },
       },
     ],
