@@ -1,16 +1,20 @@
 import { isDefinedAndNotEmpty } from '@anthonypena/fp';
 import type { Marked } from 'marked';
 
-export type FigureOptions = { id?: string; className?: string };
+export type FigureOptions = { id?: string; className?: string; is?: string };
 export function figure(
-  { id, className }: FigureOptions,
+  { id, className, is }: FigureOptions,
   ...childrens: string[]
 ) {
-  return `<figure${id ? ` id="${id}"` : ''}${className ? ` class="${className}"` : ''}>\n${childrens.join('\n')}\n</figure>`;
+  return `<figure${attr('id', id)}${attr('class', className)}${attr('is', is)}>\n${childrens.join('\n')}\n</figure>`;
+}
+
+function attr(name: string, value?: string): string {
+  return value ? ` ${name}="${value}"` : '';
 }
 
 export function figcaption(markedInstance: Marked, ...childrens: string[]) {
-  return `<figcaption>${markedInstance.parseInline(childrens.join('\n'), { mangle: false, headerIds: false })}</figcaption>`;
+  return `<figcaption>${markedInstance.parseInline(childrens.join('\n'))}</figcaption>`;
 }
 
 export type ImgOptions = { ariaHidden?: boolean; title?: string; alt?: string };

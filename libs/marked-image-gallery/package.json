@@ -1,6 +1,6 @@
 {
   "name": "@anthonypena/marked-image-gallery",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Plugin to generate image gallery from images.",
   "main": "dist/index.mjs",
   "types": "dist/index.d.mts",

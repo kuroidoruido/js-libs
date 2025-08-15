@@ -6,6 +6,7 @@ import { figcaption, figure, img } from './html.utils';
 export interface MarkedImageGalleryOptions {
   marked?: Marked;
   idPrefix?: string;
+  is?: string;
 }
 
 const defaultMarkedInstance = new Marked();
@@ -20,6 +21,7 @@ interface ImageGalleryToken {
 
 export function markedImageGallery({
   idPrefix = 'image-gallery-',
+  is,
   marked: markedInstance = defaultMarkedInstance,
 }: MarkedImageGalleryOptions = {}): MarkedExtension {
   let slugger: Slugger;
@@ -72,6 +74,7 @@ export function markedImageGallery({
               {
                 id: slugger.slug(galleryTitle),
                 className: 'marked-image-gallery',
+                is,
               },
               ...token.images.map((image) =>
                 img(image.href, { alt: image.text }),
