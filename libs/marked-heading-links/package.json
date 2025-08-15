@@ -1,9 +1,9 @@
 {
   "name": "@anthonypena/marked-heading-links",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Plugin to have link on every headings.",
   "main": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "types": "dist/index.d.mts",
   "private": false,
   "scripts": {
     "clean": "rimraf ./dist",
