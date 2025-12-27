@@ -441,6 +441,49 @@ importers:
         specifier: ^1.4.0
         version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
+  libs/marked-toc-for-series:
+    dependencies:
+      '@anthonypena/fp':
+        specifier: workspace:*
+        version: link:../fp
+    devDependencies:
+      '@anthonypena/eslint-plugin':
+        specifier: workspace:*
+        version: link:../eslint-plugin
+      '@anthonypena/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier-config
+      '@anthonypena/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/marked':
+        specifier: ^5.0.0
+        version: 5.0.2
+      eslint:
+        specifier: ^8.57.0
+        version: 8.57.1
+      marked:
+        specifier: ^5.0.0
+        version: 5.1.2
+      npm-run-all:
+        specifier: ^4.1.5
+        version: 4.1.5
+      prettier:
+        specifier: ^3.2.5
+        version: 3.3.3
+      rimraf:
+        specifier: ^5.0.5
+        version: 5.0.10
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(jiti@1.21.6)(postcss@8.4.47)(tsx@4.19.1)(typescript@5.4.5)
+      typescript:
+        specifier: ^5.4.3
+        version: 5.4.5
+      vitest:
+        specifier: ^1.4.0
+        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+
   libs/ngx-outside-click:
     dependencies:
       '@angular/animations':
