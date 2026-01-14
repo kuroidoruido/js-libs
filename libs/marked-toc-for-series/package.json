@@ -1,14 +1,14 @@
 {
   "name": "@anthonypena/marked-toc-for-series",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plugin add table of content for series of urls.",
   "repository": {
     "type": "git",
     "url": "https://github.com/kuroidoruido/js-libs.git",
     "directory": "libs/marked-toc-for-series"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.mts",
   "private": false,
   "scripts": {
     "clean": "rimraf ./dist",
