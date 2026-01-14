@@ -75,3 +75,7 @@ If defined, a title with an `<h2>` tag will be added, if not defined (undefined 
 #### `series`: the series definition
 
 A dictionnary of serie definition.
+
+#### `minEntryCount` (optional): the minimum count of element for display the TOC
+
+Default: 1

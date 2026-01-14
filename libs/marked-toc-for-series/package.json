@@ -1,6 +1,6 @@
 {
   "name": "@anthonypena/marked-toc-for-series",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Plugin add table of content for series of urls.",
   "repository": {
     "type": "git",

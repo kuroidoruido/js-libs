@@ -11,6 +11,7 @@ export type SeriesDef = Record<string, SerieDef>;
 export interface MarkedTocForSeriesOptions {
   title?: string | undefined | null;
   series: SeriesDef;
+  minEntryCount?: number;
 }
 
 export interface SerieDef {
@@ -25,6 +26,7 @@ export interface ArticleDef {
 export function markedTocForSeries({
   title,
   series,
+  minEntryCount = 1,
 }: MarkedTocForSeriesOptions): marked.MarkedExtension {
   return {
     extensions: [
@@ -50,7 +52,11 @@ export function markedTocForSeries({
             return false;
           }
           const serie = series[token.serieId];
-          if (isNotDefined(serie) || isNotDefinedOrEmpty(serie.articles)) {
+          if (
+            isNotDefined(serie) ||
+            isNotDefinedOrEmpty(serie.articles) ||
+            serie.articles.length < minEntryCount
+          ) {
             return '';
           }
 
