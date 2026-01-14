@@ -1,7 +1,12 @@
 {
   "name": "@anthonypena/marked-styled-image",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Plugin to use image title part to define custom style.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuroidoruido/js-libs.git",
+    "directory": "libs/marked-styled-image"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,

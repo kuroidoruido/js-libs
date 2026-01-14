@@ -1,7 +1,12 @@
 {
   "name": "@anthonypena/marked-heading-links",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Plugin to have link on every headings.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuroidoruido/js-libs.git",
+    "directory": "libs/marked-heading-links"
+  },
   "main": "dist/index.mjs",
   "types": "dist/index.d.mts",
   "private": false,

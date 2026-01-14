@@ -1,7 +1,12 @@
 {
   "name": "@anthonypena/marked-image-gallery",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Plugin to generate image gallery from images.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuroidoruido/js-libs.git",
+    "directory": "libs/marked-image-gallery"
+  },
   "main": "dist/index.mjs",
   "types": "dist/index.d.mts",
   "private": false,

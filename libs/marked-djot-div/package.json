@@ -1,7 +1,12 @@
 {
   "name": "@anthonypena/marked-djot-div",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Plugin add djot div syntax.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuroidoruido/js-libs.git",
+    "directory": "libs/marked-djot-div"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,

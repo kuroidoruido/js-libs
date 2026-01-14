@@ -1,7 +1,12 @@
 {
   "name": "@anthonypena/slugger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Slugger generator.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuroidoruido/js-libs.git",
+    "directory": "libs/slugger"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,

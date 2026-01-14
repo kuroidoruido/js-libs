@@ -1,7 +1,12 @@
 {
   "name": "@anthonypena/types-utils",
-  "version": "0.1.0",
-  "description": "Basic lib template",
+  "version": "1.0.0",
+  "description": "Some types utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuroidoruido/js-libs.git",
+    "directory": "libs/types-utils"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
