@@ -24,13 +24,26 @@ export function markedBetterImage({
           const raw = src.slice(0, src.indexOf('\n\n'));
           const found = marked.lexer(raw);
           if (found.length === 1) {
-            const paragraph = found[0]!;
+            const element = found[0]!;
             if (
-              paragraph.type === 'paragraph' &&
-              paragraph.tokens?.length === 1 &&
-              paragraph.tokens[0]!.type === 'image'
+              element.type === 'paragraph' &&
+              element.tokens?.length === 1 &&
+              element.tokens[0]!.type === 'image'
             ) {
-              return { ...paragraph.tokens[0]!, type: BETTER_IMAGE_TYPE };
+              return { ...element.tokens[0]!, type: BETTER_IMAGE_TYPE };
+            } else if (
+              element.type === 'blockquote' &&
+              element.tokens?.length === 1 &&
+              element.tokens[0]!.type === 'paragraph' &&
+              element.tokens[0]!.tokens?.length === 1 &&
+              element.tokens[0]!.tokens[0]!.type === 'image'
+            ) {
+              return {
+                ...element,
+                tokens: [
+                  { ...element.tokens[0]!.tokens[0]!, type: BETTER_IMAGE_TYPE },
+                ],
+              };
             }
           }
           return;
