@@ -68,6 +68,14 @@ describe(markedBetterImage.name, () => {
     expect(marked.parse(md)).toBe(html);
   });
 
+  it('should parse image with alt inside blockquote', () => {
+    const marked = new Marked();
+    marked.use(markedBetterImage());
+    const md = `> Some text.\n>\n> ![Alternative text](./foo.png)\n`;
+    const html = `<blockquote>\n<p>Some text.</p>\n<figure>\n<img src="./foo.png" alt="Alternative text"/>\n<figcaption>Alternative text</figcaption>\n</figure>\n</blockquote>\n`;
+    expect(marked.parse(md)).toBe(html);
+  });
+
   it('should parse image beside other elements', () => {
     const marked = new Marked();
     marked.use(markedBetterImage());

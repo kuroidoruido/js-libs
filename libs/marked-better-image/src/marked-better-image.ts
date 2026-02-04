@@ -31,19 +31,30 @@ export function markedBetterImage({
               element.tokens[0]!.type === 'image'
             ) {
               return { ...element.tokens[0]!, type: BETTER_IMAGE_TYPE };
-            } else if (
-              element.type === 'blockquote' &&
-              element.tokens?.length === 1 &&
-              element.tokens[0]!.type === 'paragraph' &&
-              element.tokens[0]!.tokens?.length === 1 &&
-              element.tokens[0]!.tokens[0]!.type === 'image'
-            ) {
-              return {
-                ...element,
-                tokens: [
-                  { ...element.tokens[0]!.tokens[0]!, type: BETTER_IMAGE_TYPE },
-                ],
-              };
+            } else if (element.type === 'blockquote') {
+              if (
+                element.tokens?.some(
+                  (t) =>
+                    t.type === 'paragraph' &&
+                    t.tokens?.length === 1 &&
+                    t.tokens[0]!.type === 'image',
+                )
+              ) {
+                return {
+                  ...element,
+                  tokens: element.tokens.map((t) => {
+                    if (
+                      t.type === 'paragraph' &&
+                      t.tokens?.length === 1 &&
+                      t.tokens[0]!.type === 'image'
+                    ) {
+                      return { ...t.tokens[0], type: BETTER_IMAGE_TYPE };
+                    }
+
+                    return t;
+                  }),
+                };
+              }
             }
           }
           return;
