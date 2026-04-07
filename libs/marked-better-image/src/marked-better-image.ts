@@ -1,6 +1,6 @@
 import { isDefinedAndNotEmpty, isNotDefinedOrEmpty } from '@anthonypena/fp';
 import { marked, Marked, type MarkedExtension, type Tokens } from 'marked';
-import { figcaption, figure, img } from './html.utils';
+import { figcaption, figure, img, purgeHtmlTags } from './html.utils';
 
 export interface MarkedBetterImageOptions {
   marked?: Marked;
@@ -17,6 +17,21 @@ export function markedBetterImage({
 }: MarkedBetterImageOptions = {}): MarkedExtension {
   return {
     extensions: [
+      {
+        name: 'image',
+        level: 'inline',
+        renderer(token) {
+          if (token.type === 'image') {
+            const imgToken = token as Tokens.Image;
+            return img(imgToken.href, {
+              title: imgToken.title ?? undefined,
+              alt: imgToken.text ?? undefined,
+              ariaHidden: isNotDefinedOrEmpty(imgToken.text),
+            });
+          }
+          return false;
+        },
+      },
       {
         name: BETTER_IMAGE_TYPE,
         level: 'block',
@@ -55,6 +70,7 @@ export function markedBetterImage({
                   }),
                 };
               }
+            } else {
             }
           }
           return;
@@ -78,7 +94,7 @@ export function markedBetterImage({
             return (
               figure(
                 {},
-                img(href, { title, alt, is }),
+                img(href, { title, alt: purgeHtmlTags(alt), is }),
                 figcaption(markedInstance, title),
               ) + '\n'
             );
@@ -87,7 +103,7 @@ export function markedBetterImage({
             return (
               figure(
                 {},
-                img(href, { title, alt: title, is }),
+                img(href, { title, alt: purgeHtmlTags(title), is }),
                 figcaption(markedInstance, caption!),
               ) + '\n'
             );
@@ -96,7 +112,7 @@ export function markedBetterImage({
             return (
               figure(
                 {},
-                img(href, { alt, is }),
+                img(href, { alt: purgeHtmlTags(alt), is }),
                 figcaption(markedInstance, alt),
               ) + '\n'
             );

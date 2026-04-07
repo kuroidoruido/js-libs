@@ -70,7 +70,7 @@ importers:
         version: 7.18.0(eslint@8.57.1)(typescript@5.4.5)
       vitest:
         specifier: ^1.4.0
-        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+        version: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
   cli/publish-new-packages:
     dependencies:
@@ -131,7 +131,7 @@ importers:
         version: 7.18.0(eslint@8.57.1)(typescript@5.4.5)
       vitest:
         specifier: ^1.4.0
-        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+        version: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
   libs/eslint-plugin:
     dependencies:
@@ -189,7 +189,7 @@ importers:
         version: 5.4.5
       vitest:
         specifier: ^1.4.0
-        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+        version: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
   libs/marked-better-image:
     dependencies:
@@ -206,12 +206,15 @@ importers:
       '@anthonypena/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@vitest/ui':
+        specifier: ^4.1.2
+        version: 4.1.2(vitest@1.6.0)
       eslint:
         specifier: ^8.57.0
         version: 8.57.1
       marked:
-        specifier: ^16.0.0
-        version: 16.1.2
+        specifier: ^17.0.6
+        version: 17.0.6
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
@@ -229,7 +232,7 @@ importers:
         version: 5.4.5
       vitest:
         specifier: ^1.4.0
-        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+        version: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
   libs/marked-djot-div:
     dependencies:
@@ -272,7 +275,7 @@ importers:
         version: 5.4.5
       vitest:
         specifier: ^1.4.0
-        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+        version: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
   libs/marked-heading-links:
     devDependencies:
@@ -311,7 +314,7 @@ importers:
         version: 5.4.5
       vitest:
         specifier: ^1.4.0
-        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+        version: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
   libs/marked-image-gallery:
     devDependencies:
@@ -353,7 +356,7 @@ importers:
         version: 5.4.5
       vitest:
         specifier: ^1.4.0
-        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+        version: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
   libs/marked-inline-ascii-punctuations:
     dependencies:
@@ -396,7 +399,7 @@ importers:
         version: 5.4.5
       vitest:
         specifier: ^1.4.0
-        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+        version: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
   libs/marked-styled-image:
     dependencies:
@@ -439,7 +442,7 @@ importers:
         version: 5.4.5
       vitest:
         specifier: ^1.4.0
-        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+        version: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
   libs/marked-toc-for-series:
     dependencies:
@@ -482,7 +485,7 @@ importers:
         version: 5.4.5
       vitest:
         specifier: ^1.4.0
-        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+        version: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
   libs/ngx-outside-click:
     dependencies:
@@ -588,7 +591,7 @@ importers:
         version: 5.4.5
       vitest:
         specifier: ^1.4.0
-        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+        version: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
   libs/prettier-config: {}
 
@@ -630,7 +633,7 @@ importers:
         version: 5.4.5
       vitest:
         specifier: ^1.4.0
-        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+        version: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
   libs/simple-bot:
     dependencies:
@@ -667,7 +670,7 @@ importers:
         version: 5.4.5
       vitest:
         specifier: ^1.4.0
-        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+        version: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
   libs/slugger:
     devDependencies:
@@ -703,7 +706,7 @@ importers:
         version: 5.4.5
       vitest:
         specifier: ^1.4.0
-        version: 1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+        version: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
 
   libs/tsconfig:
     devDependencies:
@@ -2583,6 +2586,9 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
+  '@polka/url@1.0.0-next.29':
+    resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
+
   '@rollup/plugin-json@6.1.0':
     resolution: {integrity: sha512-EGI2te5ENk1coGeADSIwZ7G2Q8CJS2sF120T7jLw4xFw9n7wIOXHo+kIYRAoVpJAN+kmqZSoO3Fp4JtoNF4ReA==}
     engines: {node: '>=14.0.0'}
@@ -3013,6 +3019,9 @@ packages:
   '@vitest/expect@1.6.0':
     resolution: {integrity: sha512-ixEvFVQjycy/oNgHjqsL6AZCDduC+tflRluaHIzKIsdbzkLn2U/iBnVeJwB6HsIjQBdfMR8Z0tRxKUsvFJEeWQ==}
 
+  '@vitest/pretty-format@4.1.2':
+    resolution: {integrity: sha512-dwQga8aejqeuB+TvXCMzSQemvV9hNEtDDpgUKDzOmNQayl2OG241PSWeJwKRH3CiC+sESrmoFd49rfnq7T4RnA==}
+
   '@vitest/runner@1.6.0':
     resolution: {integrity: sha512-P4xgwPjwesuBiHisAVz/LSSZtDjOTPYZVmNAnpHHSR6ONrf8eCJOFRvUwdHn30F5M1fxhqtl7QZQUk2dprIXAg==}
 
@@ -3022,8 +3031,16 @@ packages:
   '@vitest/spy@1.6.0':
     resolution: {integrity: sha512-leUTap6B/cqi/bQkXUu6bQV5TZPx7pmMBKBQiI0rJA8c3pB56ZsaTbREnF7CJfmvAS4V2cXIBAh/3rVwrrCYgw==}
 
+  '@vitest/ui@4.1.2':
+    resolution: {integrity: sha512-/irhyeAcKS2u6Zokagf9tqZJ0t8S6kMZq4ZG9BHZv7I+fkRrYfQX4w7geYeC2r6obThz39PDxvXQzZX+qXqGeg==}
+    peerDependencies:
+      vitest: 4.1.2
+
   '@vitest/utils@1.6.0':
     resolution: {integrity: sha512-21cPiuGMoMZwiOHa2i4LXkMkMkCGzA+MVFV70jRwHo95dL4x/ts5GZhML1QWuy7yfp3WzK3lRvZi3JnXTYqrBw==}
+
+  '@vitest/utils@4.1.2':
+    resolution: {integrity: sha512-xw2/TiX82lQHA06cgbqRKFb5lCAy3axQ4H4SoUFhUsg+wztiet+co86IAMDtF6Vm1hc7J6j09oh/rgDn+JdKIQ==}
 
   '@webassemblyjs/ast@1.12.1':
     resolution: {integrity: sha512-EKfMUOPRRUTy5UII4qJDGPpqfwjOmZ5jeGFwid9mnoqIFK+e0vqoi1qH56JpmZSzEL53jKnNzScdmftJyG5xWg==}
@@ -3995,6 +4012,18 @@ packages:
       picomatch:
         optional: true
 
+  fdir@6.5.0:
+    resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      picomatch: ^3 || ^4
+    peerDependenciesMeta:
+      picomatch:
+        optional: true
+
+  fflate@0.8.2:
+    resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
+
   figures@3.2.0:
     resolution: {integrity: sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==}
     engines: {node: '>=8'}
@@ -4048,6 +4077,9 @@ packages:
 
   flatted@3.3.1:
     resolution: {integrity: sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==}
+
+  flatted@3.4.2:
+    resolution: {integrity: sha512-PjDse7RzhcPkIJwy5t7KPWQSZ9cAbzQXcafsetQoD7sOJRQlGikNbx7yZp2OotDnJyrDcbyRq3Ttb18iYOqkxA==}
 
   follow-redirects@1.15.9:
     resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
@@ -4816,6 +4848,11 @@ packages:
 
   marked@16.1.2:
     resolution: {integrity: sha512-rNQt5EvRinalby7zJZu/mB+BvaAY2oz3wCuCjt1RDrWNpS1Pdf9xqMOeC9Hm5adBdcV/3XZPJpG58eT+WBc0XQ==}
+    engines: {node: '>= 20'}
+    hasBin: true
+
+  marked@17.0.6:
+    resolution: {integrity: sha512-gB0gkNafnonOw0obSTEGZTT86IuhILt2Wfx0mWH/1Au83kybTayroZ/V6nS25mN7u8ASy+5fMhgB3XPNrOZdmA==}
     engines: {node: '>= 20'}
     hasBin: true
 
@@ -5850,6 +5887,10 @@ packages:
   simple-git@3.27.0:
     resolution: {integrity: sha512-ivHoFS9Yi9GY49ogc6/YAi3Fl9ROnF4VyubNylgCkA+RVqLaKWnDSzXOVzya8csELIaWaYNutsEuAhZrtOjozA==}
 
+  sirv@3.0.2:
+    resolution: {integrity: sha512-2wcC/oGxHis/BoHkkPwldgiPSYcpZK3JU28WoMVv55yHJgcZ8rlXvuG9iZggz+sU1d4bRgIGASwyWqjxu3FM0g==}
+    engines: {node: '>=18'}
+
   slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
@@ -6107,8 +6148,16 @@ packages:
     resolution: {integrity: sha512-tX5e7OM1HnYr2+a2C/4V0htOcSQcoSTH9KgJnVvNm5zm/cyEWKJ7j7YutsH9CxMdtOkkLFy2AHrMci9IM8IPZQ==}
     engines: {node: '>=12.0.0'}
 
+  tinyglobby@0.2.15:
+    resolution: {integrity: sha512-j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ==}
+    engines: {node: '>=12.0.0'}
+
   tinypool@0.8.4:
     resolution: {integrity: sha512-i11VH5gS6IFeLY3gMBQ00/MmLncVP7JLXOw1vlgkytLmJK7QnEr7NXf0LBdxfmNPAeyetukOk0bOYrJrFGjYJQ==}
+    engines: {node: '>=14.0.0'}
+
+  tinyrainbow@3.1.0:
+    resolution: {integrity: sha512-Bf+ILmBgretUrdJxzXM0SgXLZ3XfiaUuOj/IKQHuTXip+05Xn+uyEYdVg0kYDipTBcLrCVyUzAPz7QmArb0mmw==}
     engines: {node: '>=14.0.0'}
 
   tinyspy@2.2.1:
@@ -6134,6 +6183,10 @@ packages:
   toidentifier@1.0.1:
     resolution: {integrity: sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==}
     engines: {node: '>=0.6'}
+
+  totalist@3.0.1:
+    resolution: {integrity: sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==}
+    engines: {node: '>=6'}
 
   tr46@1.0.1:
     resolution: {integrity: sha512-dTpowEjclQ7Kgx5SdBkqRzVhERQXov8/l9Ft9dVM9fmg0W0KQSVaXX9T4i6twCPNtYiZM53lpSSUAwJbFPOHxA==}
@@ -6626,7 +6679,7 @@ snapshots:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@angular-devkit/architect': 0.1703.10(chokidar@3.6.0)
-      '@angular-devkit/build-webpack': 0.1703.10(chokidar@3.6.0)(webpack-dev-server@4.15.1(webpack@5.94.0))(webpack@5.94.0)
+      '@angular-devkit/build-webpack': 0.1703.10(chokidar@3.6.0)(webpack-dev-server@4.15.1(webpack@5.94.0))(webpack@5.94.0(esbuild@0.20.1))
       '@angular-devkit/core': 17.3.10(chokidar@3.6.0)
       '@angular/compiler-cli': 17.3.12(@angular/compiler@17.3.12(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10)))(typescript@5.4.5)
       '@babel/core': 7.24.0
@@ -6639,16 +6692,16 @@ snapshots:
       '@babel/preset-env': 7.24.0(@babel/core@7.24.0)
       '@babel/runtime': 7.24.0
       '@discoveryjs/json-ext': 0.5.7
-      '@ngtools/webpack': 17.3.10(@angular/compiler-cli@17.3.12(@angular/compiler@17.3.12(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10)))(typescript@5.4.5))(typescript@5.4.5)(webpack@5.94.0)
+      '@ngtools/webpack': 17.3.10(@angular/compiler-cli@17.3.12(@angular/compiler@17.3.12(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10)))(typescript@5.4.5))(typescript@5.4.5)(webpack@5.94.0(esbuild@0.20.1))
       '@vitejs/plugin-basic-ssl': 1.1.0(vite@5.1.8(@types/node@20.16.10)(less@4.2.0)(sass@1.71.1)(terser@5.29.1))
       ansi-colors: 4.1.3
       autoprefixer: 10.4.18(postcss@8.4.35)
-      babel-loader: 9.1.3(@babel/core@7.24.0)(webpack@5.94.0)
+      babel-loader: 9.1.3(@babel/core@7.24.0)(webpack@5.94.0(esbuild@0.20.1))
       babel-plugin-istanbul: 6.1.1
       browserslist: 4.24.0
-      copy-webpack-plugin: 11.0.0(webpack@5.94.0)
+      copy-webpack-plugin: 11.0.0(webpack@5.94.0(esbuild@0.20.1))
       critters: 0.0.22
-      css-loader: 6.10.0(webpack@5.94.0)
+      css-loader: 6.10.0(webpack@5.94.0(esbuild@0.20.1))
       esbuild-wasm: 0.20.1
       fast-glob: 3.3.2
       http-proxy-middleware: 2.0.6(@types/express@4.17.21)
@@ -6657,11 +6710,11 @@ snapshots:
       jsonc-parser: 3.2.1
       karma-source-map-support: 1.4.0
       less: 4.2.0
-      less-loader: 11.1.0(less@4.2.0)(webpack@5.94.0)
-      license-webpack-plugin: 4.0.2(webpack@5.94.0)
+      less-loader: 11.1.0(less@4.2.0)(webpack@5.94.0(esbuild@0.20.1))
+      license-webpack-plugin: 4.0.2(webpack@5.94.0(esbuild@0.20.1))
       loader-utils: 3.2.1
       magic-string: 0.30.8
-      mini-css-extract-plugin: 2.8.1(webpack@5.94.0)
+      mini-css-extract-plugin: 2.8.1(webpack@5.94.0(esbuild@0.20.1))
       mrmime: 2.0.0
       open: 8.4.2
       ora: 5.4.1
@@ -6669,13 +6722,13 @@ snapshots:
       picomatch: 4.0.1
       piscina: 4.4.0
       postcss: 8.4.35
-      postcss-loader: 8.1.1(postcss@8.4.35)(typescript@5.4.5)(webpack@5.94.0)
+      postcss-loader: 8.1.1(postcss@8.4.35)(typescript@5.4.5)(webpack@5.94.0(esbuild@0.20.1))
       resolve-url-loader: 5.0.0
       rxjs: 7.8.1
       sass: 1.71.1
-      sass-loader: 14.1.1(sass@1.71.1)(webpack@5.94.0)
+      sass-loader: 14.1.1(sass@1.71.1)(webpack@5.94.0(esbuild@0.20.1))
       semver: 7.6.0
-      source-map-loader: 5.0.0(webpack@5.94.0)
+      source-map-loader: 5.0.0(webpack@5.94.0(esbuild@0.20.1))
       source-map-support: 0.5.21
       terser: 5.29.1
       tree-kill: 1.2.2
@@ -6685,10 +6738,10 @@ snapshots:
       vite: 5.1.8(@types/node@20.16.10)(less@4.2.0)(sass@1.71.1)(terser@5.29.1)
       watchpack: 2.4.0
       webpack: 5.94.0(esbuild@0.20.1)
-      webpack-dev-middleware: 6.1.2(webpack@5.94.0)
+      webpack-dev-middleware: 6.1.2(webpack@5.94.0(esbuild@0.20.1))
       webpack-dev-server: 4.15.1(webpack@5.94.0)
       webpack-merge: 5.10.0
-      webpack-subresource-integrity: 5.1.0(webpack@5.94.0)
+      webpack-subresource-integrity: 5.1.0(webpack@5.94.0(esbuild@0.20.1))
     optionalDependencies:
       esbuild: 0.20.1
       karma: 6.4.4
@@ -6712,7 +6765,7 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@angular-devkit/build-webpack@0.1703.10(chokidar@3.6.0)(webpack-dev-server@4.15.1(webpack@5.94.0))(webpack@5.94.0)':
+  '@angular-devkit/build-webpack@0.1703.10(chokidar@3.6.0)(webpack-dev-server@4.15.1(webpack@5.94.0))(webpack@5.94.0(esbuild@0.20.1))':
     dependencies:
       '@angular-devkit/architect': 0.1703.10(chokidar@3.6.0)
       rxjs: 7.8.1
@@ -8268,7 +8321,7 @@ snapshots:
       '@napi-rs/nice-win32-x64-msvc': 1.0.1
     optional: true
 
-  '@ngtools/webpack@17.3.10(@angular/compiler-cli@17.3.12(@angular/compiler@17.3.12(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10)))(typescript@5.4.5))(typescript@5.4.5)(webpack@5.94.0)':
+  '@ngtools/webpack@17.3.10(@angular/compiler-cli@17.3.12(@angular/compiler@17.3.12(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10)))(typescript@5.4.5))(typescript@5.4.5)(webpack@5.94.0(esbuild@0.20.1))':
     dependencies:
       '@angular/compiler-cli': 17.3.12(@angular/compiler@17.3.12(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10)))(typescript@5.4.5)
       typescript: 5.4.5
@@ -8352,6 +8405,8 @@ snapshots:
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
+
+  '@polka/url@1.0.0-next.29': {}
 
   '@rollup/plugin-json@6.1.0(rollup@4.24.0)':
     dependencies:
@@ -8760,6 +8815,10 @@ snapshots:
       '@vitest/utils': 1.6.0
       chai: 4.5.0
 
+  '@vitest/pretty-format@4.1.2':
+    dependencies:
+      tinyrainbow: 3.1.0
+
   '@vitest/runner@1.6.0':
     dependencies:
       '@vitest/utils': 1.6.0
@@ -8776,12 +8835,29 @@ snapshots:
     dependencies:
       tinyspy: 2.2.1
 
+  '@vitest/ui@4.1.2(vitest@1.6.0)':
+    dependencies:
+      '@vitest/utils': 4.1.2
+      fflate: 0.8.2
+      flatted: 3.4.2
+      pathe: 2.0.3
+      sirv: 3.0.2
+      tinyglobby: 0.2.15
+      tinyrainbow: 3.1.0
+      vitest: 1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1)
+
   '@vitest/utils@1.6.0':
     dependencies:
       diff-sequences: 29.6.3
       estree-walker: 3.0.3
       loupe: 2.3.7
       pretty-format: 29.7.0
+
+  '@vitest/utils@4.1.2':
+    dependencies:
+      '@vitest/pretty-format': 4.1.2
+      convert-source-map: 2.0.0
+      tinyrainbow: 3.1.0
 
   '@webassemblyjs/ast@1.12.1':
     dependencies:
@@ -9021,7 +9097,7 @@ snapshots:
     dependencies:
       possible-typed-array-names: 1.0.0
 
-  babel-loader@9.1.3(@babel/core@7.24.0)(webpack@5.94.0):
+  babel-loader@9.1.3(@babel/core@7.24.0)(webpack@5.94.0(esbuild@0.20.1)):
     dependencies:
       '@babel/core': 7.24.0
       find-cache-dir: 4.0.0
@@ -9338,7 +9414,7 @@ snapshots:
     dependencies:
       is-what: 3.14.1
 
-  copy-webpack-plugin@11.0.0(webpack@5.94.0):
+  copy-webpack-plugin@11.0.0(webpack@5.94.0(esbuild@0.20.1)):
     dependencies:
       fast-glob: 3.3.2
       glob-parent: 6.0.2
@@ -9392,7 +9468,7 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
-  css-loader@6.10.0(webpack@5.94.0):
+  css-loader@6.10.0(webpack@5.94.0(esbuild@0.20.1)):
     dependencies:
       icss-utils: 5.1.0(postcss@8.4.47)
       postcss: 8.4.47
@@ -10046,6 +10122,12 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.3
 
+  fdir@6.5.0(picomatch@4.0.3):
+    optionalDependencies:
+      picomatch: 4.0.3
+
+  fflate@0.8.2: {}
+
   figures@3.2.0:
     dependencies:
       escape-string-regexp: 1.0.5
@@ -10123,6 +10205,8 @@ snapshots:
   flat@5.0.2: {}
 
   flatted@3.3.1: {}
+
+  flatted@3.4.2: {}
 
   follow-redirects@1.15.9: {}
 
@@ -10755,7 +10839,7 @@ snapshots:
       picocolors: 1.1.1
       shell-quote: 1.8.1
 
-  less-loader@11.1.0(less@4.2.0)(webpack@5.94.0):
+  less-loader@11.1.0(less@4.2.0)(webpack@5.94.0(esbuild@0.20.1)):
     dependencies:
       klona: 2.0.6
       less: 4.2.0
@@ -10780,7 +10864,7 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
-  license-webpack-plugin@4.0.2(webpack@5.94.0):
+  license-webpack-plugin@4.0.2(webpack@5.94.0(esbuild@0.20.1)):
     dependencies:
       webpack-sources: 3.2.3
     optionalDependencies:
@@ -10912,6 +10996,8 @@ snapshots:
 
   marked@16.1.2: {}
 
+  marked@17.0.6: {}
+
   marked@5.1.2: {}
 
   media-typer@0.3.0: {}
@@ -10951,7 +11037,7 @@ snapshots:
 
   mimic-fn@4.0.0: {}
 
-  mini-css-extract-plugin@2.8.1(webpack@5.94.0):
+  mini-css-extract-plugin@2.8.1(webpack@5.94.0(esbuild@0.20.1)):
     dependencies:
       schema-utils: 4.2.0
       tapable: 2.2.1
@@ -11509,7 +11595,7 @@ snapshots:
       postcss: 8.4.47
       tsx: 4.19.1
 
-  postcss-loader@8.1.1(postcss@8.4.35)(typescript@5.4.5)(webpack@5.94.0):
+  postcss-loader@8.1.1(postcss@8.4.35)(typescript@5.4.5)(webpack@5.94.0(esbuild@0.20.1)):
     dependencies:
       cosmiconfig: 9.0.0(typescript@5.4.5)
       jiti: 1.21.6
@@ -11854,7 +11940,7 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sass-loader@14.1.1(sass@1.71.1)(webpack@5.94.0):
+  sass-loader@14.1.1(sass@1.71.1)(webpack@5.94.0(esbuild@0.20.1)):
     dependencies:
       neo-async: 2.6.2
     optionalDependencies:
@@ -12027,6 +12113,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  sirv@3.0.2:
+    dependencies:
+      '@polka/url': 1.0.0-next.29
+      mrmime: 2.0.0
+      totalist: 3.0.1
+
   slash@3.0.0: {}
 
   slash@4.0.0: {}
@@ -12092,7 +12184,7 @@ snapshots:
 
   source-map-js@1.2.1: {}
 
-  source-map-loader@5.0.0(webpack@5.94.0):
+  source-map-loader@5.0.0(webpack@5.94.0(esbuild@0.20.1)):
     dependencies:
       iconv-lite: 0.6.3
       source-map-js: 1.2.1
@@ -12324,7 +12416,14 @@ snapshots:
       fdir: 6.4.6(picomatch@4.0.3)
       picomatch: 4.0.3
 
+  tinyglobby@0.2.15:
+    dependencies:
+      fdir: 6.5.0(picomatch@4.0.3)
+      picomatch: 4.0.3
+
   tinypool@0.8.4: {}
+
+  tinyrainbow@3.1.0: {}
 
   tinyspy@2.2.1: {}
 
@@ -12341,6 +12440,8 @@ snapshots:
       is-number: 7.0.0
 
   toidentifier@1.0.1: {}
+
+  totalist@3.0.1: {}
 
   tr46@1.0.1:
     dependencies:
@@ -12570,7 +12671,7 @@ snapshots:
       sass: 1.79.4
       terser: 5.29.1
 
-  vitest@1.6.0(@types/node@20.16.10)(less@4.2.0)(sass@1.79.4)(terser@5.29.1):
+  vitest@1.6.0(@types/node@20.16.10)(@vitest/ui@4.1.2)(less@4.2.0)(sass@1.79.4)(terser@5.29.1):
     dependencies:
       '@vitest/expect': 1.6.0
       '@vitest/runner': 1.6.0
@@ -12594,6 +12695,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 20.16.10
+      '@vitest/ui': 4.1.2(vitest@1.6.0)
     transitivePeerDependencies:
       - less
       - lightningcss
@@ -12635,7 +12737,7 @@ snapshots:
       schema-utils: 4.2.0
       webpack: 5.94.0(esbuild@0.20.1)
 
-  webpack-dev-middleware@6.1.2(webpack@5.94.0):
+  webpack-dev-middleware@6.1.2(webpack@5.94.0(esbuild@0.20.1)):
     dependencies:
       colorette: 2.0.20
       memfs: 3.5.3
@@ -12693,7 +12795,7 @@ snapshots:
 
   webpack-sources@3.2.3: {}
 
-  webpack-subresource-integrity@5.1.0(webpack@5.94.0):
+  webpack-subresource-integrity@5.1.0(webpack@5.94.0(esbuild@0.20.1)):
     dependencies:
       typed-assert: 1.0.9
       webpack: 5.94.0(esbuild@0.20.1)
