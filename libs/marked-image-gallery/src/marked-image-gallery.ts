@@ -1,7 +1,7 @@
 import { marked, Marked, type MarkedExtension, Tokens } from 'marked';
 import { Slugger } from '@anthonypena/slugger';
 import { isDefinedAndNotEmpty } from '@anthonypena/fp';
-import { figcaption, figure, img } from './html.utils';
+import { figcaption, figure, img, purgeHtmlTags } from './html.utils';
 
 export interface MarkedImageGalleryOptions {
   marked?: Marked;
@@ -77,7 +77,11 @@ export function markedImageGallery({
                 is,
               },
               ...token.images.map((image) =>
-                img(image.href, { alt: image.text }),
+                img(image.href, {
+                  alt: purgeHtmlTags(
+                    markedInstance.parseInline(image.text, { async: false }),
+                  ),
+                }),
               ),
               figcaption(markedInstance, galleryTitle),
             ) + '\n'

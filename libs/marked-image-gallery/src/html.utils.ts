@@ -1,4 +1,4 @@
-import { isDefinedAndNotEmpty } from '@anthonypena/fp';
+import { isDefinedAndNotEmpty, isNotDefinedOrEmpty } from '@anthonypena/fp';
 import type { Marked } from 'marked';
 
 export type FigureOptions = { id?: string; className?: string; is?: string };
@@ -30,4 +30,11 @@ export function img(href: string, { ariaHidden, title, alt }: ImgOptions = {}) {
     .filter(isDefinedAndNotEmpty)
     .join(' ');
   return `<img src="${href}" ${attributes}/>`;
+}
+
+export function purgeHtmlTags(s: string | undefined | null): string {
+  if (isNotDefinedOrEmpty(s)) {
+    return '';
+  }
+  return s.replaceAll(/<\/?[^>]*>/g, '');
 }

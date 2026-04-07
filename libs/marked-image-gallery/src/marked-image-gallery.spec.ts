@@ -60,4 +60,17 @@ describe(markedImageGallery.name, () => {
       `</figure>\n`;
     expect(marked.parse(md)).toBe(html);
   });
+  it('should parse image gallery with quotes in alt text', () => {
+    const marked = new Marked();
+    marked.use(markedImageGallery());
+    const md = `![Alternative "text"](./foo.png)\n![Alternative "text"](./bar.png)\n![Alternative "text"](./baz.png)\n`;
+    const html =
+      `<figure id="image-gallery-alternative-text" class="marked-image-gallery">\n` +
+      `<img src="./foo.png" alt="Alternative &quot;text&quot;"/>\n` +
+      `<img src="./bar.png" alt="Alternative &quot;text&quot;"/>\n` +
+      `<img src="./baz.png" alt="Alternative &quot;text&quot;"/>\n` +
+      `<figcaption>Alternative &quot;text&quot;</figcaption>\n` +
+      `</figure>\n`;
+    expect(marked.parse(md)).toBe(html);
+  });
 });

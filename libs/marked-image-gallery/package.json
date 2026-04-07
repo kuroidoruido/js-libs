@@ -1,6 +1,6 @@
 {
   "name": "@anthonypena/marked-image-gallery",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Plugin to generate image gallery from images.",
   "repository": {
     "type": "git",
